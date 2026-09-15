@@ -3,12 +3,12 @@ left_yaw2roll,1,printed,left_yaw2roll,PLA solid-equivalent volume; infill and ma
 left_hip,1,printed,left_hip,PLA solid-equivalent volume; infill and material not frozen,6.44,Rev 1 digital design,models/step/left_hip.step
 left_upper_leg,1,printed,left_upper_leg,PLA solid-equivalent volume; infill and material not frozen,23.06,Rev 1 digital design,models/step/left_upper_leg.step
 left_lower_leg,1,printed,left_lower_leg,PLA solid-equivalent volume; infill and material not frozen,8.55,Rev 1 digital design,models/step/left_lower_leg.step
-left_foot,1,printed,left_foot,PLA solid-equivalent volume; infill and material not frozen,30.15,Rev 1 digital design,models/step/left_foot.step
+left_foot,1,printed,left_foot,PLA solid-equivalent volume; infill and material not frozen,35.27,Rev 1 digital design,models/step/left_foot.step
 right_yaw2roll,1,printed,right_yaw2roll,PLA solid-equivalent volume; infill and material not frozen,17.03,Rev 1 digital design,models/step/right_yaw2roll.step
 right_hip,1,printed,right_hip,PLA solid-equivalent volume; infill and material not frozen,6.44,Rev 1 digital design,models/step/right_hip.step
 right_upper_leg,1,printed,right_upper_leg,PLA solid-equivalent volume; infill and material not frozen,23.06,Rev 1 digital design,models/step/right_upper_leg.step
 right_lower_leg,1,printed,right_lower_leg,PLA solid-equivalent volume; infill and material not frozen,8.55,Rev 1 digital design,models/step/right_lower_leg.step
-right_foot,1,printed,right_foot,PLA solid-equivalent volume; infill and material not frozen,30.15,Rev 1 digital design,models/step/right_foot.step
+right_foot,1,printed,right_foot,PLA solid-equivalent volume; infill and material not frozen,35.27,Rev 1 digital design,models/step/right_foot.step
 chassis,1,printed,trunk,PLA solid-equivalent volume; infill and material not frozen,44.33,Rev 1 digital design,models/step/chassis.step
 torso_shell,1,printed,trunk,PLA solid-equivalent volume; infill and material not frozen,29.07,Rev 1 digital design,models/step/torso_shell.step
 tail_cover,1,printed,trunk,PLA solid-equivalent volume; infill and material not frozen,37.5,Rev 1 digital design,models/step/tail_cover.step

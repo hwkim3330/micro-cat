@@ -1,0 +1,42 @@
+{
+ "scope": "Two competing requirements. The spur must reach the floor BEFORE the sole-only tipping angle, or it never carries load and buys nothing. It must also stay off the floor during walking, or it enlarges the contact patch and kills commanded yaw the way a long sole does (tools/foot_length_sweep.py). This sweep moves only the spur collision box in the generated model and measures both ends: static tipping, and commanded yaw / forward speed.",
+ "note": "Only the spur collision box moves; printed parts, masses and joint limits are identical.",
+ "results": [
+  {
+   "spur_lift": "no spur",
+   "tip_aft_deg": 4.65,
+   "tip_fwd_deg": 18.9,
+   "yaw_rate_at_cmd_1_rad_s": 0.0685,
+   "speed_at_cmd_0p6_m_s": 0.1934,
+   "fell_turning_s": null,
+   "fell_forward_s": null
+  },
+  {
+   "spur_lift": "0.5 mm",
+   "tip_aft_deg": 14.5,
+   "tip_fwd_deg": 18.9,
+   "yaw_rate_at_cmd_1_rad_s": 0.0121,
+   "speed_at_cmd_0p6_m_s": 0.1542,
+   "fell_turning_s": null,
+   "fell_forward_s": null
+  },
+  {
+   "spur_lift": "1.0 mm",
+   "tip_aft_deg": 14.55,
+   "tip_fwd_deg": 18.9,
+   "yaw_rate_at_cmd_1_rad_s": 0.0135,
+   "speed_at_cmd_0p6_m_s": 0.1574,
+   "fell_turning_s": null,
+   "fell_forward_s": null
+  },
+  {
+   "spur_lift": "1.5 mm",
+   "tip_aft_deg": 4.65,
+   "tip_fwd_deg": 18.9,
+   "yaw_rate_at_cmd_1_rad_s": 0.0144,
+   "speed_at_cmd_0p6_m_s": 0.1627,
+   "fell_turning_s": null,
+   "fell_forward_s": null
+  }
+ ]
+}

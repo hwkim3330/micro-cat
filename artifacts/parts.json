@@ -103,16 +103,16 @@
       ],
       "body": "left_foot",
       "group": "shell",
-      "note": "Paw: ankle horn plate on a wide rounded sole that reaches 16 mm further back than the reference foot, hollow underneath for a replaceable pad. Print sole down.",
+      "note": "Paw: ankle horn plate on a rounded sole, hollow underneath for a replaceable pad, plus a heel spur that sits 1.5 mm above the sole plane and reaches 24 mm behind it. Print sole down; the spur underside is a bridge 1.5 mm off the bed.",
       "printed": true,
       "print_axis": "Z",
       "dimensions_mm": [
-        74.0,
+        82.0,
         46.0,
         38.0
       ],
-      "volume_mm3": 24316.4,
-      "mass_g": 30.15,
+      "volume_mm3": 28444.8,
+      "mass_g": 35.27,
       "step": "models/step/left_foot.step",
       "stl": "models/print/left_foot.stl"
     },
@@ -218,16 +218,16 @@
       ],
       "body": "right_foot",
       "group": "shell",
-      "note": "Paw: ankle horn plate on a wide rounded sole that reaches 16 mm further back than the reference foot, hollow underneath for a replaceable pad. Print sole down.",
+      "note": "Paw: ankle horn plate on a rounded sole, hollow underneath for a replaceable pad, plus a heel spur that sits 1.5 mm above the sole plane and reaches 24 mm behind it. Print sole down; the spur underside is a bridge 1.5 mm off the bed.",
       "printed": true,
       "print_axis": "Z",
       "dimensions_mm": [
-        74.0,
+        82.0,
         46.0,
         38.0
       ],
-      "volume_mm3": 24316.4,
-      "mass_g": 30.15,
+      "volume_mm3": 28444.8,
+      "mass_g": 35.27,
       "step": "models/step/right_foot.step",
       "stl": "models/print/right_foot.stl"
     },
@@ -1062,6 +1062,6 @@
       ]
     }
   ],
-  "printed_mass_g": 450.3,
+  "printed_mass_g": 460.6,
   "purchased_mass_g": 399.0
 }

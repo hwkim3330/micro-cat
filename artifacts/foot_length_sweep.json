@@ -1,0 +1,38 @@
+{
+ "scope": "The rearward sole extension buys backward-tipping margin. It also enlarges the foot contact patch, which resists yaw. This sweep edits ONLY the foot collision box in the generated model - the printed geometry is untouched - so the contact length is the one thing that changes, and measures commanded-yaw response and forward speed for each.",
+ "note": "Only the foot collision box changes; printed parts, masses and joint limits are identical.",
+ "command_yaw_rad_s": 1.0,
+ "command_forward_m_s": 0.6,
+ "seconds": 10,
+ "seed": 0,
+ "results": [
+  {
+   "sole_length_mm": 74,
+   "yaw_rate_at_cmd_1_rad_s": 0.0107,
+   "speed_at_cmd_0p6_m_s": 0.1639,
+   "fell_turning_s": null,
+   "fell_forward_s": null
+  },
+  {
+   "sole_length_mm": 66,
+   "yaw_rate_at_cmd_1_rad_s": 0.0114,
+   "speed_at_cmd_0p6_m_s": 0.1745,
+   "fell_turning_s": null,
+   "fell_forward_s": null
+  },
+  {
+   "sole_length_mm": 58,
+   "yaw_rate_at_cmd_1_rad_s": 0.1432,
+   "speed_at_cmd_0p6_m_s": 0.1944,
+   "fell_turning_s": null,
+   "fell_forward_s": null
+  },
+  {
+   "sole_length_mm": 50,
+   "yaw_rate_at_cmd_1_rad_s": 0.2883,
+   "speed_at_cmd_0p6_m_s": 0.0487,
+   "fell_turning_s": null,
+   "fell_forward_s": null
+  }
+ ]
+}

@@ -34,10 +34,18 @@ def build():
             lo,hi=mesh.bounds;mesh=trimesh.creation.box(hi-lo);mesh.apply_translation((lo+hi)/2)
         per_body[p['body']].append((mass,mesh));extents.setdefault(p['body'],[]).append(mesh.bounds)
         if p['name'].endswith('_foot'):
-            # Sole footprint measured from the printed paw, not declared: the sole is everything
-            # below the ankle-plate step, so the support polygon follows the CAD.
-            v=mesh.vertices;sole=v[v[:,2]<=v[:,2].min()+.013]
-            soles[p['body']]=(sole.min(axis=0),sole.max(axis=0))
+            # Two contact patches measured from the printed paw, not declared: the flat sole,
+            # and the heel spur that sits above it and only reaches the floor once the robot
+            # has pitched back. Keeping them separate is what stops the spur from enlarging
+            # the walking contact patch, which is what kills commanded yaw.
+            v=mesh.vertices;z=v[:,2];z0=z.min()
+            sole=v[z<=z0+.0005]
+            rear=v[(v[:,0]<sole[:,0].min())&(z<=z0+.004)]
+            patches=[(sole.min(axis=0),sole.max(axis=0),'sole')]
+            if len(rear):
+                s0=rear[:,2].min();spur=rear[rear[:,2]<=s0+.0005]
+                patches.append((spur.min(axis=0),spur.max(axis=0),'spur'))
+            soles[p['body']]=patches
     r=E.Element('mujoco',model='Micro_Cat_Rev1_14');add(r,'compiler',angle='radian',autolimits='true');add(r,'option',timestep='.005',gravity='0 0 -9.81',iterations=80)
     default=add(r,'default');add(default,'joint',damping='.02',armature='.00001',frictionloss='.005');add(default,'geom',friction='1 .005 .0001',condim='3')
     w=add(r,'worldbody');add(w,'geom',name='floor',type='plane',size='3 3 .01',rgba='.85 .85 .8 1')
@@ -60,8 +68,11 @@ def build():
         lo=np.asarray(lo);hi=np.asarray(hi);add(xml[b],'geom',name=name,type='box',pos=vector((lo+hi)/2),size=vector((hi-lo)/2),mass='0',rgba='.8 .3 .1 .25',group='3',**kw)
     for side in ['left','right']:
         g=1 if side=='left' else -1;p=pivots[f'{side}_foot']
-        lo,hi=soles[f'{side}_foot'];box_geom(f'{side}_foot',f'{side}_foot_collision',lo,[hi[0],hi[1],lo[2]+.0105])
-        add(xml[f'{side}_foot'],'site',name=f'{side}_foot',pos=vector([(lo[0]+hi[0])/2,(lo[1]+hi[1])/2,lo[2]]),size='.003')
+        for lo,hi,kind in soles[f'{side}_foot']:
+            name=f'{side}_foot_collision' if kind=='sole' else f'{side}_foot_spur_collision'
+            box_geom(f'{side}_foot',name,lo,[hi[0],hi[1],lo[2]+(.0105 if kind=='sole' else .004)])
+            if kind=='sole':
+                add(xml[f'{side}_foot'],'site',name=f'{side}_foot',pos=vector([(lo[0]+hi[0])/2,(lo[1]+hi[1])/2,lo[2]]),size='.003')
         for b in [f'{side}_upper_leg',f'{side}_lower_leg']:
             lo=np.min([e[0] for e in extents[b]],axis=0);hi=np.max([e[1] for e in extents[b]],axis=0);box_geom(b,b+'_collision',lo,hi,contype='2',conaffinity='2')
     add(xml['trunk'],'geom',name='trunk_shell_collision',type='ellipsoid',pos=vector((np.array([-6,0,142])-L.TRUNK_ORIGIN)*.001),size='.044 .0376 .024',mass='0',rgba='.8 .3 .1 .25',group='3',contype='1',conaffinity='1')

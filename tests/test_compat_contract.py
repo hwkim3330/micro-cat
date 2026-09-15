@@ -47,4 +47,17 @@ class ContractTests(unittest.TestCase):
             lo,hi=(float(v) for v in el.get('range').split())
             self.assertAlmostEqual(lo,travel[name]['min_rad'],places=6,msg=name)
             self.assertAlmostEqual(hi,travel[name]['max_rad'],places=6,msg=name)
+    def test_harness_calibration_is_recorded_and_honest(self):
+        h=json.loads((R/'artifacts/harness_check.json').read_text())
+        ref=[r for r in h['best_tracking_ratio'] if 'reference' in r['model']]
+        self.assertEqual(len(ref),1,'the reference robot must be measured in the same harness')
+        # If this ever passes 0.9 the instrument became usable and the docs must be revisited.
+        self.assertLess(ref[0]['best_yaw_tracking'],0.9)
+        self.assertIn('conclusion',h)
+    def test_heel_spur_only_counts_when_it_reaches_the_floor(self):
+        s=json.loads((R/'artifacts/heel_spur_sweep.json').read_text())['results']
+        by={r['spur_lift']:r for r in s}
+        self.assertAlmostEqual(by['no spur']['tip_aft_deg'],by['1.5 mm']['tip_aft_deg'],places=2,
+                               msg='a spur that never touches must not change the tipping limit')
+        self.assertGreater(by['1.0 mm']['tip_aft_deg'],by['no spur']['tip_aft_deg']*2)
 if __name__=='__main__':unittest.main()

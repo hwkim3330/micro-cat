@@ -22,6 +22,9 @@ SHELL=[.96,.94,.90,1];ACCENT=[.97,.66,.62,1];GRAPHITE=[.22,.25,.26,1];DARK=[.12,
 DENSITY=0.00124 # g/mm3 PLA solid-equivalent; slicer mass with infill is lower
 WALL=3.0 # shell wall; Rev C raised from 2.4 for drop strength
 ROLL_SWEEP=0.35 # rad of hip-roll clearance carved into the hip bracket
+SPUR_LIFT=1.0   # mm the heel spur sits above the sole plane; it must clear the floor while walking
+SPUR_BACK=-78   # mm; the spur must reach the floor BEFORE the sole-only tipping angle (4.75 deg),
+                # so the setback from the sole's rear edge has to exceed SPUR_LIFT/tan(4.75 deg) = 18 mm
 parts=[];purchased=[]
 
 def box(x0,x1,y0,y1,z0,z1):return cq.Workplane('XY').box(x1-x0,y1-y0,z1-z0).translate(((x0+x1)/2,(y0+y1)/2,(z0+z1)/2))
@@ -115,13 +118,16 @@ def build_leg(side):
     ll=ll.cut(sb(-60,60,0,100,0,31)) # leave the sole room to tilt
     add(n('lower_leg'),ll,SHELL,n('lower_leg'),'Y' if g>0 else '-Y','Shin: knee horn plate stepping down into a channel around the ankle servo. Print on the inboard face.',group='shell')
     # Foot: ankle horn plate on a rounded hollow sole with a gusset.
-    # Sole runs 16 mm further back than the reference foot: the measured weak axis of the
-    # reference robot is backward tipping (6.7 deg), and the aft support reach sets it.
-    sole=vbox(-70,4,g*27 if g>0 else -73,g*73 if g>0 else -27,13.5,25,12)
-    ft=horn(n('ankle'),width=20,length=26).union(sole)
-    ft=ft.cut(vbox(-64,-2,g*33 if g>0 else -67,g*67 if g>0 else -33,10,21,8)) # hollow underside for a TPU pad; 4 mm skin above
+    # Flat contact patch stays the reference length: tools/foot_length_sweep.py shows that
+    # lengthening the patch past ~58 mm collapses commanded yaw (0.14 -> 0.01 rad/s), because
+    # a longer patch resists spin. The backward-tipping fix is the raised heel spur below,
+    # which only reaches the floor once the robot has already pitched back.
+    sole=vbox(-54,4,g*27 if g>0 else -73,g*73 if g>0 else -27,13.5,25,10)
+    spur=vbox(SPUR_BACK,-50,g*33 if g>0 else -67,g*67 if g>0 else -33,13.5+SPUR_LIFT,25,8)
+    ft=horn(n('ankle'),width=20,length=26).union(sole).union(spur)
+    ft=ft.cut(vbox(-48,-2,g*33 if g>0 else -67,g*67 if g>0 else -33,10,21,6)) # hollow underside for a TPU pad; 4 mm skin above
     ft=ft.union(sb(-43.8,-19.8,64.5,68.5,22,40)) # the horn plate continues down to the sole, 4 mm thick
-    add(n('foot'),ft,ACCENT,n('foot'),'Z','Paw: ankle horn plate on a wide rounded sole that reaches 16 mm further back than the reference foot, hollow underneath for a replaceable pad. Print sole down.',group='shell')
+    add(n('foot'),ft,ACCENT,n('foot'),'Z','Paw: ankle horn plate on a rounded sole, hollow underneath for a replaceable pad, plus a heel spur that sits 1.5 mm above the sole plane and reaches 24 mm behind it. Print sole down; the spur underside is a bridge 1.5 mm off the bed.',group='shell')
 for side in ['left','right']:
     print(side,'leg');build_leg(side)
 

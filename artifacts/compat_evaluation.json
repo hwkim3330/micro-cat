@@ -4,7 +4,7 @@
   "observation_size": 61,
   "action_size": 14,
   "control_hz": 50,
-  "model_sha256": "fe482252e0342250d1f5e3e4f9e958215a33a3782e59741bb78caca4dd486e53",
+  "model_sha256": "4e2ce444f28e8983a5a1fe10235c65091d1f5fbfafa7956b5e23556c85e6a295",
   "weights": {
     "infer_policy.py": {
       "url": "https://raw.githubusercontent.com/pollen-robotics/microduck_rl/2b25a48b08f1f17bc38c90bb03144c81fbd9ed07/scripts/infer_policy.py",
@@ -38,21 +38,21 @@
       "seed": 0,
       "duration_s": 10.0,
       "first_fall_s": null,
-      "max_tilt_degrees": 0.77,
+      "max_tilt_degrees": 1.0,
       "final_xy_m": [
-        0.0012,
+        0.0006,
         0.0002
       ],
       "finite": true,
       "mean_body_velocity": [
         4e-05,
         1e-05,
-        -0.00019
+        -0.00015
       ],
       "tracking_mae": [
         4e-05,
         1e-05,
-        0.00019
+        0.00015
       ],
       "tracking_gate_passed": true
     },
@@ -66,77 +66,77 @@
       "seed": 1,
       "duration_s": 10.0,
       "first_fall_s": null,
-      "max_tilt_degrees": 0.76,
+      "max_tilt_degrees": 1.0,
       "final_xy_m": [
-        0.001,
-        0.0005
-      ],
-      "finite": true,
-      "mean_body_velocity": [
-        5e-05,
-        0.0,
-        -0.00014
-      ],
-      "tracking_mae": [
-        5e-05,
-        0.0,
-        0.00014
-      ],
-      "tracking_gate_passed": true
-    },
-    {
-      "policy": "alpha_walking",
-      "command": [
-        0,
-        0,
-        0
-      ],
-      "seed": 2,
-      "duration_s": 10.0,
-      "first_fall_s": null,
-      "max_tilt_degrees": 0.74,
-      "final_xy_m": [
-        0.0008,
-        0.0005
-      ],
-      "finite": true,
-      "mean_body_velocity": [
-        5e-05,
-        0.0,
-        -0.00014
-      ],
-      "tracking_mae": [
-        5e-05,
-        0.0,
-        0.00014
-      ],
-      "tracking_gate_passed": true
-    },
-    {
-      "policy": "alpha_walking",
-      "command": [
-        0.1,
-        0,
-        0
-      ],
-      "seed": 0,
-      "duration_s": 10.0,
-      "first_fall_s": null,
-      "max_tilt_degrees": 0.87,
-      "final_xy_m": [
-        0.0065,
+        0.0004,
         0.0006
       ],
       "finite": true,
       "mean_body_velocity": [
-        0.0001,
-        -0.0,
+        5e-05,
+        1e-05,
+        -0.00011
+      ],
+      "tracking_mae": [
+        5e-05,
+        1e-05,
+        0.00011
+      ],
+      "tracking_gate_passed": true
+    },
+    {
+      "policy": "alpha_walking",
+      "command": [
+        0,
+        0,
+        0
+      ],
+      "seed": 2,
+      "duration_s": 10.0,
+      "first_fall_s": null,
+      "max_tilt_degrees": 0.96,
+      "final_xy_m": [
+        0.0003,
+        0.0005
+      ],
+      "finite": true,
+      "mean_body_velocity": [
+        5e-05,
+        0.0,
         -0.00012
       ],
       "tracking_mae": [
-        0.0999,
+        5e-05,
         1e-05,
-        0.00013
+        0.00012
+      ],
+      "tracking_gate_passed": true
+    },
+    {
+      "policy": "alpha_walking",
+      "command": [
+        0.1,
+        0,
+        0
+      ],
+      "seed": 0,
+      "duration_s": 10.0,
+      "first_fall_s": null,
+      "max_tilt_degrees": 1.06,
+      "final_xy_m": [
+        0.0058,
+        0.0006
+      ],
+      "finite": true,
+      "mean_body_velocity": [
+        9e-05,
+        -0.0,
+        -5e-05
+      ],
+      "tracking_mae": [
+        0.09991,
+        1e-05,
+        8e-05
       ],
       "tracking_gate_passed": false
     },
@@ -150,21 +150,21 @@
       "seed": 1,
       "duration_s": 10.0,
       "first_fall_s": null,
-      "max_tilt_degrees": 0.85,
+      "max_tilt_degrees": 1.03,
       "final_xy_m": [
-        0.0062,
+        0.0055,
         0.0009
       ],
       "finite": true,
       "mean_body_velocity": [
-        0.0001,
-        -0.0,
-        -0.0001
+        9e-05,
+        -1e-05,
+        -4e-05
       ],
       "tracking_mae": [
-        0.0999,
+        0.09991,
         1e-05,
-        0.00011
+        8e-05
       ],
       "tracking_gate_passed": false
     },
@@ -178,21 +178,21 @@
       "seed": 2,
       "duration_s": 10.0,
       "first_fall_s": null,
-      "max_tilt_degrees": 0.8,
+      "max_tilt_degrees": 0.99,
       "final_xy_m": [
-        0.0061,
+        0.0055,
         0.0008
       ],
       "finite": true,
       "mean_body_velocity": [
-        0.0001,
-        -0.0,
-        -0.00013
+        9e-05,
+        -1e-05,
+        -5e-05
       ],
       "tracking_mae": [
-        0.0999,
+        0.09991,
         1e-05,
-        0.00014
+        8e-05
       ],
       "tracking_gate_passed": false
     },
@@ -206,21 +206,21 @@
       "seed": 0,
       "duration_s": 10.0,
       "first_fall_s": null,
-      "max_tilt_degrees": 2.64,
+      "max_tilt_degrees": 2.36,
       "final_xy_m": [
-        0.7386,
-        0.0507
+        0.7301,
+        0.1746
       ],
       "finite": true,
       "mean_body_velocity": [
-        0.08449,
-        0.00222,
-        0.01414
+        0.08556,
+        0.00097,
+        0.05051
       ],
       "tracking_mae": [
-        0.21551,
-        0.11061,
-        0.64787
+        0.21444,
+        0.11429,
+        0.66611
       ],
       "tracking_gate_passed": false
     },
@@ -234,21 +234,21 @@
       "seed": 1,
       "duration_s": 10.0,
       "first_fall_s": null,
-      "max_tilt_degrees": 2.58,
+      "max_tilt_degrees": 2.36,
       "final_xy_m": [
-        0.7391,
-        0.0435
+        0.7323,
+        0.203
       ],
       "finite": true,
       "mean_body_velocity": [
-        0.08463,
-        0.00207,
-        0.00402
+        0.0862,
+        0.00125,
+        0.05309
       ],
       "tracking_mae": [
-        0.21537,
-        0.11066,
-        0.65209
+        0.2138,
+        0.11444,
+        0.66438
       ],
       "tracking_gate_passed": false
     },
@@ -262,21 +262,21 @@
       "seed": 2,
       "duration_s": 10.0,
       "first_fall_s": null,
-      "max_tilt_degrees": 2.62,
+      "max_tilt_degrees": 2.35,
       "final_xy_m": [
-        0.7433,
-        0.021
+        0.7496,
+        0.1804
       ],
       "finite": true,
       "mean_body_velocity": [
-        0.08497,
-        0.00106,
-        -0.0013
+        0.08671,
+        0.00126,
+        0.03706
       ],
       "tracking_mae": [
-        0.21503,
-        0.11119,
-        0.65166
+        0.21329,
+        0.11471,
+        0.6594
       ],
       "tracking_gate_passed": false
     },
@@ -290,21 +290,21 @@
       "seed": 0,
       "duration_s": 10.0,
       "first_fall_s": null,
-      "max_tilt_degrees": 0.95,
+      "max_tilt_degrees": 1.16,
       "final_xy_m": [
-        0.0046,
-        0.0009
+        0.0041,
+        0.0008
       ],
       "finite": true,
       "mean_body_velocity": [
-        7e-05,
-        0.0,
-        -0.0
+        6e-05,
+        -0.0,
+        0.00012
       ],
       "tracking_mae": [
-        7e-05,
+        6e-05,
         0.0,
-        0.3
+        0.29988
       ],
       "tracking_gate_passed": false
     },
@@ -318,21 +318,21 @@
       "seed": 1,
       "duration_s": 10.0,
       "first_fall_s": null,
-      "max_tilt_degrees": 1.02,
+      "max_tilt_degrees": 1.23,
       "final_xy_m": [
-        0.0043,
+        0.0038,
         0.0012
       ],
       "finite": true,
       "mean_body_velocity": [
-        8e-05,
-        -0.0,
-        -1e-05
+        6e-05,
+        -1e-05,
+        0.00012
       ],
       "tracking_mae": [
-        8e-05,
-        0.0,
-        0.30001
+        6e-05,
+        1e-05,
+        0.29988
       ],
       "tracking_gate_passed": false
     },
@@ -346,21 +346,21 @@
       "seed": 2,
       "duration_s": 10.0,
       "first_fall_s": null,
-      "max_tilt_degrees": 1.01,
+      "max_tilt_degrees": 1.22,
       "final_xy_m": [
-        0.0042,
+        0.0037,
         0.0011
       ],
       "finite": true,
       "mean_body_velocity": [
-        8e-05,
-        -0.0,
-        -3e-05
+        6e-05,
+        -1e-05,
+        0.00011
       ],
       "tracking_mae": [
-        8e-05,
+        6e-05,
         1e-05,
-        0.30003
+        0.29989
       ],
       "tracking_gate_passed": false
     },
@@ -374,21 +374,21 @@
       "seed": 0,
       "duration_s": 10.0,
       "first_fall_s": null,
-      "max_tilt_degrees": 1.14,
+      "max_tilt_degrees": 0.93,
       "final_xy_m": [
-        0.0028,
+        0.0022,
         -0.0003
       ],
       "finite": true,
       "mean_body_velocity": [
         3e-05,
         -0.0,
-        0.00018
+        0.00017
       ],
       "tracking_mae": [
         3e-05,
         0.0,
-        0.00018
+        0.00017
       ],
       "tracking_gate_passed": true
     },
@@ -402,21 +402,21 @@
       "seed": 1,
       "duration_s": 10.0,
       "first_fall_s": null,
-      "max_tilt_degrees": 1.17,
+      "max_tilt_degrees": 0.97,
       "final_xy_m": [
-        0.0025,
-        -0.0
+        0.0019,
+        -0.0001
       ],
       "finite": true,
       "mean_body_velocity": [
         3e-05,
         -0.0,
-        0.00017
+        0.00015
       ],
       "tracking_mae": [
         3e-05,
         0.0,
-        0.00017
+        0.00015
       ],
       "tracking_gate_passed": true
     },
@@ -430,21 +430,21 @@
       "seed": 2,
       "duration_s": 10.0,
       "first_fall_s": null,
-      "max_tilt_degrees": 1.24,
+      "max_tilt_degrees": 1.05,
       "final_xy_m": [
-        0.0023,
-        -0.0001
+        0.0018,
+        -0.0002
       ],
       "finite": true,
       "mean_body_velocity": [
-        4e-05,
+        3e-05,
         -0.0,
-        0.00016
+        0.00015
       ],
       "tracking_mae": [
-        4e-05,
+        3e-05,
         0.0,
-        0.00016
+        0.00015
       ],
       "tracking_gate_passed": true
     }

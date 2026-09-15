@@ -12,6 +12,7 @@ def j(p):
     return json.loads(f.read_text()) if f.exists() else None
 parts=j('artifacts/parts.json');travel=j('engineering/joint_travel.json');tip=j('artifacts/tip_study.json')
 bal=j('artifacts/balance.json');pr=j('artifacts/printability.json');itf=j('artifacts/interference.json');ev=j('artifacts/compat_evaluation.json')
+harness=j('artifacts/harness_check.json');spur=j('artifacts/heel_spur_sweep.json')
 KO={'hip_yaw':'고관절 요','hip_roll':'고관절 롤','hip_pitch':'고관절 피치','knee':'무릎','ankle':'발목',
     'neck_pitch':'목 피치','head_pitch':'머리 피치','head_yaw':'머리 요','head_roll':'머리 롤','jaw':'턱'}
 def deg(x):return math.degrees(x)
@@ -48,7 +49,19 @@ def block_summary():
         res=ev.get('results',[]);up=sum(1 for r in res if r.get('first_fall_s') is None);gate=sum(1 for r in res if r.get('tracking_gate_passed'))
         rows.append(f"| 공식 가중치 (무수정) | {len(res)}회 중 {up}회 직립, 추종 게이트 {gate}/{len(res)} 통과 | `artifacts/compat_evaluation.json` |")
     return rows
-BLOCKS={'travel':block_travel,'tip':block_tip,'summary':block_summary}
+def block_harness():
+    rows=['| 모델 | 전진 명령 추종 (최대) | 회전 명령 추종 (최대) |','|---|---|---|']
+    for r in harness['best_tracking_ratio']:
+        rows.append(f"| {r['model']} | {r['best_forward_tracking']*100:.0f} % | {r['best_yaw_tracking']*100:.0f} % |")
+    rows.append('')
+    rows.append('기준 로봇 자신이 자기 명령을 못 따르므로, **이 하네스의 절대 속도·회전 숫자는 설계 근거로 쓸 수 없습니다.** 같은 하네스 안에서의 모델 간 상대 비교만 의미가 있습니다.')
+    return rows
+def block_spur():
+    rows=['| 뒤꿈치 돌기 높이 | 뒤로 기울기 | 앞으로 |','|---|---|---|']
+    for r in spur['results']:
+        rows.append(f"| {r['spur_lift']} | {r['tip_aft_deg']}° | {r['tip_fwd_deg']}° |")
+    return rows
+BLOCKS={'travel':block_travel,'tip':block_tip,'summary':block_summary,'harness':block_harness,'spur':block_spur}
 for doc in ['README.md','docs/DESIGN.md']:
     f=R/doc
     if not f.exists():continue
