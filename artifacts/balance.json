@@ -1,0 +1,176 @@
+{
+  "scope": "HOME pose, both feet flat; CAD-derived masses (PLA solid density + purchased catalogue masses); fasteners, cables and print infill not modelled.",
+  "mass_g": 848.0,
+  "center_of_mass_mm": [
+    -10.87,
+    0.3,
+    142.19
+  ],
+  "support_hull_xy_mm": [
+    [
+      -70.0,
+      -73.0
+    ],
+    [
+      4.0,
+      -73.0
+    ],
+    [
+      4.0,
+      73.0
+    ],
+    [
+      -70.0,
+      73.0
+    ]
+  ],
+  "minimum_static_margin_mm": 14.87,
+  "bodies": [
+    {
+      "body": "trunk_base",
+      "mass_g": 271.5,
+      "com_mm": [
+        -36.9,
+        0.2,
+        133.8
+      ]
+    },
+    {
+      "body": "x_left_yaw2roll",
+      "mass_g": 35.0,
+      "com_mm": [
+        5.4,
+        17.5,
+        94.5
+      ]
+    },
+    {
+      "body": "x_left_hip",
+      "mass_g": 6.4,
+      "com_mm": [
+        19.4,
+        28.6,
+        99.2
+      ]
+    },
+    {
+      "body": "x_left_upper_leg",
+      "mass_g": 59.1,
+      "com_mm": [
+        -16.2,
+        59.0,
+        96.3
+      ]
+    },
+    {
+      "body": "x_left_lower_leg",
+      "mass_g": 26.6,
+      "com_mm": [
+        -31.8,
+        45.3,
+        49.1
+      ]
+    },
+    {
+      "body": "x_left_foot",
+      "mass_g": 30.2,
+      "com_mm": [
+        -32.9,
+        51.3,
+        21.9
+      ]
+    },
+    {
+      "body": "x_neck",
+      "mass_g": 65.4,
+      "com_mm": [
+        26.1,
+        -2.9,
+        177.5
+      ]
+    },
+    {
+      "body": "x_head_base",
+      "mass_g": 4.4,
+      "com_mm": [
+        27.4,
+        6.0,
+        215.2
+      ]
+    },
+    {
+      "body": "x_head_yoke",
+      "mass_g": 33.6,
+      "com_mm": [
+        25.4,
+        -9.0,
+        238.0
+      ]
+    },
+    {
+      "body": "x_head",
+      "mass_g": 150.1,
+      "com_mm": [
+        17.4,
+        4.4,
+        257.0
+      ]
+    },
+    {
+      "body": "x_jaw",
+      "mass_g": 8.5,
+      "com_mm": [
+        55.7,
+        2.1,
+        227.2
+      ]
+    },
+    {
+      "body": "x_right_yaw2roll",
+      "mass_g": 35.0,
+      "com_mm": [
+        5.4,
+        -17.5,
+        94.5
+      ]
+    },
+    {
+      "body": "x_right_hip",
+      "mass_g": 6.4,
+      "com_mm": [
+        19.4,
+        -28.6,
+        99.2
+      ]
+    },
+    {
+      "body": "x_right_upper_leg",
+      "mass_g": 59.1,
+      "com_mm": [
+        -16.2,
+        -59.0,
+        96.3
+      ]
+    },
+    {
+      "body": "x_right_lower_leg",
+      "mass_g": 26.6,
+      "com_mm": [
+        -31.8,
+        -45.3,
+        49.1
+      ]
+    },
+    {
+      "body": "x_right_foot",
+      "mass_g": 30.2,
+      "com_mm": [
+        -32.9,
+        -51.3,
+        21.9
+      ]
+    }
+  ],
+  "model_sha256": "fe482252e0342250d1f5e3e4f9e958215a33a3782e59741bb78caca4dd486e53",
+  "physical_verified": false
+}

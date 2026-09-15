@@ -1,0 +1,6 @@
+.venv
+.venv-policy
+.cache
+node_modules
+__pycache__
+*.pyc

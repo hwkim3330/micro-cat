@@ -1,0 +1,85 @@
+{
+  "revision": "camera fit study; not an integrated electronic product",
+  "camera": {
+    "count": 1,
+    "variant": "base",
+    "placement": "single central nose camera; two decorative expression eyes",
+    "stereo_depth": false,
+    "candidate": "Raspberry Pi Camera Module 3 Standard",
+    "source": "https://datasheets.raspberrypi.com/camera/camera-module-3-standard-mechanical-drawing.pdf",
+    "capability_source": "https://www.raspberrypi.com/documentation/accessories/camera.html",
+    "pcb_dimensions_mm": [
+      25,
+      23.862,
+      1.12
+    ],
+    "pcb_back_x_mm": 122,
+    "pcb_bottom_z_mm": 185.6,
+    "hole_y_mm": [
+      -10.5,
+      10.5
+    ],
+    "hole_z_mm": [
+      187.6,
+      200.1
+    ],
+    "hole_diameter_mm": 2.2,
+    "optical_axis_z_mm": 200,
+    "assumed_pupil_x_mm": 130.1,
+    "horizontal_fov_deg": 66,
+    "vertical_fov_deg": 41,
+    "nose_plane_x_mm": 135,
+    "nose_port_radius_mm": 9,
+    "conservative_lens_radius_mm": 2.875,
+    "alignment_allowance_mm": 0.5,
+    "status": "manufacturer hole layout used in original carrier; physical mounting and optics unverified",
+    "capabilities": [
+      "11.9 MP sensor",
+      "motorised autofocus",
+      "HDR modes"
+    ],
+    "implemented_runtime": "operator-enabled real JPEG capture through rpicam-still; hardware not tested"
+  },
+  "compute": {
+    "candidate": "Raspberry Pi 5 4GB bench prototype; Raspberry Pi Compute Module 5 4GB with eMMC and wireless for product feasibility",
+    "source": "https://www.raspberrypi.com/products/compute-module-5/",
+    "dimensions_mm": [
+      55,
+      40,
+      4.7
+    ],
+    "dimensions_scope": "CM5 module only; excludes custom carrier, connectors and cooling",
+    "reference_baseline": "Microduck official runtime uses Radxa Zero 3; a separate compatibility baseline, not a drop-in Pi camera host",
+    "status": "proposed architecture; no ARM board benchmark, carrier design, thermal test or hardware integration yet",
+    "architecture_document": "docs/DESIGN.md"
+  },
+  "microphone": {
+    "required": true,
+    "status": "not selected or integrated; input capture, echo cancellation and motor-noise tests required"
+  },
+  "speaker": {
+    "required": true,
+    "status": "not selected or integrated; amplifier, acoustic cavity and measured output required"
+  },
+  "imu": {
+    "required": true,
+    "status": "not selected or integrated; timing, calibration and vibration isolation required"
+  },
+  "range_sensor": {
+    "required": false,
+    "selection_gate": "Add only if obstacle-distance tests require a dedicated sensor; not a second camera by default",
+    "status": "candidate selection and optical crosstalk/latency tests pending"
+  },
+  "foot_contact": {
+    "required": true,
+    "status": "sensor/load-cell or estimated-contact design pending for B2 and Q4"
+  },
+  "power": {
+    "status": "battery, protection, motor supply, logic regulator, fuse and current limits not designed",
+    "motor_candidate": "XL330-M288-T, manufacturer operating range 3.7–6.0 V; recommended 5.0 V; independently regulated motor rail",
+    "source": "https://emanual.robotis.com/docs/en/dxl/x/xl330-m288/",
+    "simulation_discrepancy": "Existing BAM experiments use 7.4 V for reference reproduction. This is outside the XL330 published operating range and is not a physical power recommendation; recalibration/re-evaluation at selected hardware voltage required."
+  },
+  "physical_validation": false,
+  "feature_superiority_verified": false
+}

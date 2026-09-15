@@ -1,0 +1,1067 @@
+{
+  "revision": "Rev1 design-pose actuated chibi cat",
+  "parts": [
+    {
+      "name": "left_yaw2roll",
+      "color": [
+        0.22,
+        0.25,
+        0.26,
+        1
+      ],
+      "body": "left_yaw2roll",
+      "group": "frame",
+      "note": "Hip yaw horn plate on a U-channel around the hip roll servo. Print on the plate face; every wall is vertical.",
+      "printed": true,
+      "print_axis": "-Z",
+      "dimensions_mm": [
+        32.4,
+        26.8,
+        40.4
+      ],
+      "volume_mm3": 13731.2,
+      "mass_g": 17.03,
+      "step": "models/step/left_yaw2roll.step",
+      "stl": "models/print/left_yaw2roll.stl"
+    },
+    {
+      "name": "left_hip",
+      "color": [
+        0.22,
+        0.25,
+        0.26,
+        1
+      ],
+      "body": "left_hip",
+      "group": "frame",
+      "note": "Hip corner bracket: roll horn plate and pitch horn plate joined by one rib. Print on the pitch plate face.",
+      "printed": true,
+      "print_axis": "-Y",
+      "dimensions_mm": [
+        33.5,
+        38.1,
+        29.27
+      ],
+      "volume_mm3": 5197.5,
+      "mass_g": 6.44,
+      "step": "models/step/left_hip.step",
+      "stl": "models/print/left_hip.stl"
+    },
+    {
+      "name": "left_upper_leg",
+      "color": [
+        0.96,
+        0.94,
+        0.9,
+        1
+      ],
+      "body": "left_upper_leg",
+      "group": "shell",
+      "note": "Thigh shell around the hip pitch and knee servos, open on the inboard face. Print on the outboard face; the cavity opens upward, no support.",
+      "printed": true,
+      "print_axis": "Y",
+      "dimensions_mm": [
+        62.2,
+        31.75,
+        44.5
+      ],
+      "volume_mm3": 18593.5,
+      "mass_g": 23.06,
+      "step": "models/step/left_upper_leg.step",
+      "stl": "models/print/left_upper_leg.stl"
+    },
+    {
+      "name": "left_lower_leg",
+      "color": [
+        0.96,
+        0.94,
+        0.9,
+        1
+      ],
+      "body": "left_lower_leg",
+      "group": "shell",
+      "note": "Shin: knee horn plate stepping down into a channel around the ankle servo. Print on the inboard face.",
+      "printed": true,
+      "print_axis": "Y",
+      "dimensions_mm": [
+        26.8,
+        14.4,
+        62.5
+      ],
+      "volume_mm3": 6898.7,
+      "mass_g": 8.55,
+      "step": "models/step/left_lower_leg.step",
+      "stl": "models/print/left_lower_leg.stl"
+    },
+    {
+      "name": "left_foot",
+      "color": [
+        0.97,
+        0.66,
+        0.62,
+        1
+      ],
+      "body": "left_foot",
+      "group": "shell",
+      "note": "Paw: ankle horn plate on a wide rounded sole that reaches 16 mm further back than the reference foot, hollow underneath for a replaceable pad. Print sole down.",
+      "printed": true,
+      "print_axis": "Z",
+      "dimensions_mm": [
+        74.0,
+        46.0,
+        38.0
+      ],
+      "volume_mm3": 24316.4,
+      "mass_g": 30.15,
+      "step": "models/step/left_foot.step",
+      "stl": "models/print/left_foot.stl"
+    },
+    {
+      "name": "right_yaw2roll",
+      "color": [
+        0.22,
+        0.25,
+        0.26,
+        1
+      ],
+      "body": "right_yaw2roll",
+      "group": "frame",
+      "note": "Hip yaw horn plate on a U-channel around the hip roll servo. Print on the plate face; every wall is vertical.",
+      "printed": true,
+      "print_axis": "-Z",
+      "dimensions_mm": [
+        32.4,
+        26.8,
+        40.4
+      ],
+      "volume_mm3": 13731.2,
+      "mass_g": 17.03,
+      "step": "models/step/right_yaw2roll.step",
+      "stl": "models/print/right_yaw2roll.stl"
+    },
+    {
+      "name": "right_hip",
+      "color": [
+        0.22,
+        0.25,
+        0.26,
+        1
+      ],
+      "body": "right_hip",
+      "group": "frame",
+      "note": "Hip corner bracket: roll horn plate and pitch horn plate joined by one rib. Print on the pitch plate face.",
+      "printed": true,
+      "print_axis": "Y",
+      "dimensions_mm": [
+        33.5,
+        38.1,
+        29.27
+      ],
+      "volume_mm3": 5197.5,
+      "mass_g": 6.44,
+      "step": "models/step/right_hip.step",
+      "stl": "models/print/right_hip.stl"
+    },
+    {
+      "name": "right_upper_leg",
+      "color": [
+        0.96,
+        0.94,
+        0.9,
+        1
+      ],
+      "body": "right_upper_leg",
+      "group": "shell",
+      "note": "Thigh shell around the hip pitch and knee servos, open on the inboard face. Print on the outboard face; the cavity opens upward, no support.",
+      "printed": true,
+      "print_axis": "-Y",
+      "dimensions_mm": [
+        62.2,
+        31.75,
+        44.5
+      ],
+      "volume_mm3": 18593.5,
+      "mass_g": 23.06,
+      "step": "models/step/right_upper_leg.step",
+      "stl": "models/print/right_upper_leg.stl"
+    },
+    {
+      "name": "right_lower_leg",
+      "color": [
+        0.96,
+        0.94,
+        0.9,
+        1
+      ],
+      "body": "right_lower_leg",
+      "group": "shell",
+      "note": "Shin: knee horn plate stepping down into a channel around the ankle servo. Print on the inboard face.",
+      "printed": true,
+      "print_axis": "-Y",
+      "dimensions_mm": [
+        26.8,
+        14.4,
+        62.5
+      ],
+      "volume_mm3": 6898.7,
+      "mass_g": 8.55,
+      "step": "models/step/right_lower_leg.step",
+      "stl": "models/print/right_lower_leg.stl"
+    },
+    {
+      "name": "right_foot",
+      "color": [
+        0.97,
+        0.66,
+        0.62,
+        1
+      ],
+      "body": "right_foot",
+      "group": "shell",
+      "note": "Paw: ankle horn plate on a wide rounded sole that reaches 16 mm further back than the reference foot, hollow underneath for a replaceable pad. Print sole down.",
+      "printed": true,
+      "print_axis": "Z",
+      "dimensions_mm": [
+        74.0,
+        46.0,
+        38.0
+      ],
+      "volume_mm3": 24316.4,
+      "mass_g": 30.15,
+      "step": "models/step/right_foot.step",
+      "stl": "models/print/right_foot.stl"
+    },
+    {
+      "name": "chassis",
+      "color": [
+        0.22,
+        0.25,
+        0.26,
+        1
+      ],
+      "body": "trunk",
+      "group": "frame",
+      "note": "Chassis: floor with two hip-yaw servo boxes, neck horn plate, battery tray and compute board wall. Print floor down; the servo boxes bridge 21 mm.",
+      "printed": true,
+      "print_axis": "Z",
+      "dimensions_mm": [
+        131.0,
+        61.98,
+        51.9
+      ],
+      "volume_mm3": 35750.4,
+      "mass_g": 44.33,
+      "step": "models/step/chassis.step",
+      "stl": "models/print/chassis.stl"
+    },
+    {
+      "name": "torso_shell",
+      "color": [
+        0.96,
+        0.94,
+        0.9,
+        1
+      ],
+      "body": "trunk",
+      "group": "shell",
+      "note": "One-piece egg shell with a chest grille, neck slot and tail opening, open under the hips. Four M3 through the flanks into chassis bosses.",
+      "printed": true,
+      "print_axis": "Z",
+      "dimensions_mm": [
+        86.04,
+        77.2,
+        47.8
+      ],
+      "volume_mm3": 23445.0,
+      "mass_g": 29.07,
+      "step": "models/step/torso_shell.step",
+      "stl": "models/print/torso_shell.stl"
+    },
+    {
+      "name": "tail_cover",
+      "color": [
+        0.96,
+        0.94,
+        0.9,
+        1
+      ],
+      "body": "trunk",
+      "group": "shell",
+      "note": "Tail: curls up behind the body and doubles as the battery cover. Slides over the tray and takes two M3 into it.",
+      "printed": true,
+      "print_axis": "-X",
+      "dimensions_mm": [
+        64.58,
+        66.39,
+        81.59
+      ],
+      "volume_mm3": 30242.4,
+      "mass_g": 37.5,
+      "step": "models/step/tail_cover.step",
+      "stl": "models/print/tail_cover.stl"
+    },
+    {
+      "name": "neck_link",
+      "color": [
+        0.22,
+        0.25,
+        0.26,
+        1
+      ],
+      "body": "neck",
+      "group": "frame",
+      "note": "Neck tube around the stacked neck-pitch and head-pitch servos, open on the horn side. Print on the closed face.",
+      "printed": true,
+      "print_axis": "-Y",
+      "dimensions_mm": [
+        24.8,
+        31.4,
+        71.7
+      ],
+      "volume_mm3": 12901.6,
+      "mass_g": 16.0,
+      "step": "models/step/neck_link.step",
+      "stl": "models/print/neck_link.stl"
+    },
+    {
+      "name": "neck_sleeve",
+      "color": [
+        0.96,
+        0.94,
+        0.9,
+        1
+      ],
+      "body": "neck",
+      "group": "shell",
+      "note": "Neck cover: rounded shell over the neck column, open on the horn side; pitches with the neck.",
+      "printed": true,
+      "print_axis": "-Y",
+      "dimensions_mm": [
+        31.0,
+        34.52,
+        61.12
+      ],
+      "volume_mm3": 10780.1,
+      "mass_g": 13.37,
+      "step": "models/step/neck_sleeve.step",
+      "stl": "models/print/neck_sleeve.stl"
+    },
+    {
+      "name": "head_base",
+      "color": [
+        0.22,
+        0.25,
+        0.26,
+        1
+      ],
+      "body": "head_base",
+      "group": "frame",
+      "note": "Head base: head-pitch horn plate joined to the head-yaw horn plate. The only part that stays still while the head yaws.",
+      "printed": true,
+      "print_axis": "-Z",
+      "dimensions_mm": [
+        26.0,
+        35.0,
+        25.1
+      ],
+      "volume_mm3": 3559.8,
+      "mass_g": 4.41,
+      "step": "models/step/head_base.step",
+      "stl": "models/print/head_base.stl"
+    },
+    {
+      "name": "head_yoke",
+      "color": [
+        0.22,
+        0.25,
+        0.26,
+        1
+      ],
+      "body": "head_yoke",
+      "group": "frame",
+      "note": "Yoke: box around the head-yaw servo with two ribs out to the head-roll horn plate.",
+      "printed": true,
+      "print_axis": "-Z",
+      "dimensions_mm": [
+        31.3,
+        37.8,
+        32.4
+      ],
+      "volume_mm3": 12601.1,
+      "mass_g": 15.63,
+      "step": "models/step/head_yoke.step",
+      "stl": "models/print/head_yoke.stl"
+    },
+    {
+      "name": "head_frame",
+      "color": [
+        0.22,
+        0.25,
+        0.26,
+        1
+      ],
+      "body": "head",
+      "group": "frame",
+      "note": "Head frame: one shell with a deck over the yoke, the head-roll and jaw servo bays, a forward beam, the camera wall and three skull bosses.",
+      "printed": true,
+      "print_axis": "-Z",
+      "dimensions_mm": [
+        84.2,
+        61.9,
+        41.7
+      ],
+      "volume_mm3": 20253.1,
+      "mass_g": 25.11,
+      "step": "models/step/head_frame.step",
+      "stl": "models/print/head_frame.stl"
+    },
+    {
+      "name": "skull",
+      "color": [
+        0.96,
+        0.94,
+        0.9,
+        1
+      ],
+      "body": "head",
+      "group": "shell",
+      "note": "Head: one-piece round cat cranium with a short muzzle, solid ears and a nose lens hood. Three M3 down into the head frame; eyes, ear insides and nose are painted, not parts.",
+      "printed": true,
+      "print_axis": "Z",
+      "dimensions_mm": [
+        108.0,
+        110.17,
+        81.0
+      ],
+      "volume_mm3": 69329.9,
+      "mass_g": 85.97,
+      "step": "models/step/skull.step",
+      "stl": "models/print/skull.stl"
+    },
+    {
+      "name": "jaw_chin",
+      "color": [
+        0.96,
+        0.94,
+        0.9,
+        1
+      ],
+      "body": "jaw",
+      "group": "shell",
+      "note": "Lower jaw: rounded chin cup on a single arm bolted to the jaw servo horn.",
+      "printed": true,
+      "print_axis": "-Z",
+      "dimensions_mm": [
+        62.0,
+        51.97,
+        28.5
+      ],
+      "volume_mm3": 6841.0,
+      "mass_g": 8.48,
+      "step": "models/step/jaw_chin.step",
+      "stl": "models/print/jaw_chin.stl"
+    }
+  ],
+  "purchased": [
+    {
+      "name": "servo_left_hip_yaw",
+      "color": [
+        0.12,
+        0.14,
+        0.15,
+        1
+      ],
+      "body": "trunk",
+      "kind": "actuator",
+      "mass_g": 18.0,
+      "note": "XL330-class smart servo envelope; confirm the case hole pattern before ordering",
+      "printed": false,
+      "dimensions_mm": [
+        34.0,
+        20.0,
+        29.0
+      ],
+      "stl": "models/purchased/servo_left_hip_yaw.stl"
+    },
+    {
+      "name": "servo_left_hip_roll",
+      "color": [
+        0.12,
+        0.14,
+        0.15,
+        1
+      ],
+      "body": "left_yaw2roll",
+      "kind": "actuator",
+      "mass_g": 18.0,
+      "note": "XL330-class smart servo envelope; confirm the case hole pattern before ordering",
+      "printed": false,
+      "dimensions_mm": [
+        29.0,
+        20.0,
+        34.0
+      ],
+      "stl": "models/purchased/servo_left_hip_roll.stl"
+    },
+    {
+      "name": "servo_left_hip_pitch",
+      "color": [
+        0.12,
+        0.14,
+        0.15,
+        1
+      ],
+      "body": "left_upper_leg",
+      "kind": "actuator",
+      "mass_g": 18.0,
+      "note": "XL330-class smart servo envelope; confirm the case hole pattern before ordering",
+      "printed": false,
+      "dimensions_mm": [
+        34.0,
+        29.0,
+        20.0
+      ],
+      "stl": "models/purchased/servo_left_hip_pitch.stl"
+    },
+    {
+      "name": "servo_left_knee",
+      "color": [
+        0.12,
+        0.14,
+        0.15,
+        1
+      ],
+      "body": "left_upper_leg",
+      "kind": "actuator",
+      "mass_g": 18.0,
+      "note": "XL330-class smart servo envelope; confirm the case hole pattern before ordering",
+      "printed": false,
+      "dimensions_mm": [
+        20.0,
+        29.0,
+        34.0
+      ],
+      "stl": "models/purchased/servo_left_knee.stl"
+    },
+    {
+      "name": "servo_left_ankle",
+      "color": [
+        0.12,
+        0.14,
+        0.15,
+        1
+      ],
+      "body": "left_lower_leg",
+      "kind": "actuator",
+      "mass_g": 18.0,
+      "note": "XL330-class smart servo envelope; confirm the case hole pattern before ordering",
+      "printed": false,
+      "dimensions_mm": [
+        20.0,
+        29.0,
+        34.0
+      ],
+      "stl": "models/purchased/servo_left_ankle.stl"
+    },
+    {
+      "name": "servo_right_hip_yaw",
+      "color": [
+        0.12,
+        0.14,
+        0.15,
+        1
+      ],
+      "body": "trunk",
+      "kind": "actuator",
+      "mass_g": 18.0,
+      "note": "XL330-class smart servo envelope; confirm the case hole pattern before ordering",
+      "printed": false,
+      "dimensions_mm": [
+        34.0,
+        20.0,
+        29.0
+      ],
+      "stl": "models/purchased/servo_right_hip_yaw.stl"
+    },
+    {
+      "name": "servo_right_hip_roll",
+      "color": [
+        0.12,
+        0.14,
+        0.15,
+        1
+      ],
+      "body": "right_yaw2roll",
+      "kind": "actuator",
+      "mass_g": 18.0,
+      "note": "XL330-class smart servo envelope; confirm the case hole pattern before ordering",
+      "printed": false,
+      "dimensions_mm": [
+        29.0,
+        20.0,
+        34.0
+      ],
+      "stl": "models/purchased/servo_right_hip_roll.stl"
+    },
+    {
+      "name": "servo_right_hip_pitch",
+      "color": [
+        0.12,
+        0.14,
+        0.15,
+        1
+      ],
+      "body": "right_upper_leg",
+      "kind": "actuator",
+      "mass_g": 18.0,
+      "note": "XL330-class smart servo envelope; confirm the case hole pattern before ordering",
+      "printed": false,
+      "dimensions_mm": [
+        34.0,
+        29.0,
+        20.0
+      ],
+      "stl": "models/purchased/servo_right_hip_pitch.stl"
+    },
+    {
+      "name": "servo_right_knee",
+      "color": [
+        0.12,
+        0.14,
+        0.15,
+        1
+      ],
+      "body": "right_upper_leg",
+      "kind": "actuator",
+      "mass_g": 18.0,
+      "note": "XL330-class smart servo envelope; confirm the case hole pattern before ordering",
+      "printed": false,
+      "dimensions_mm": [
+        20.0,
+        29.0,
+        34.0
+      ],
+      "stl": "models/purchased/servo_right_knee.stl"
+    },
+    {
+      "name": "servo_right_ankle",
+      "color": [
+        0.12,
+        0.14,
+        0.15,
+        1
+      ],
+      "body": "right_lower_leg",
+      "kind": "actuator",
+      "mass_g": 18.0,
+      "note": "XL330-class smart servo envelope; confirm the case hole pattern before ordering",
+      "printed": false,
+      "dimensions_mm": [
+        20.0,
+        29.0,
+        34.0
+      ],
+      "stl": "models/purchased/servo_right_ankle.stl"
+    },
+    {
+      "name": "servo_neck_pitch",
+      "color": [
+        0.12,
+        0.14,
+        0.15,
+        1
+      ],
+      "body": "neck",
+      "kind": "actuator",
+      "mass_g": 18.0,
+      "note": "XL330-class smart servo envelope; confirm the case hole pattern before ordering",
+      "printed": false,
+      "dimensions_mm": [
+        20.0,
+        29.0,
+        34.0
+      ],
+      "stl": "models/purchased/servo_neck_pitch.stl"
+    },
+    {
+      "name": "servo_head_pitch",
+      "color": [
+        0.12,
+        0.14,
+        0.15,
+        1
+      ],
+      "body": "neck",
+      "kind": "actuator",
+      "mass_g": 18.0,
+      "note": "XL330-class smart servo envelope; confirm the case hole pattern before ordering",
+      "printed": false,
+      "dimensions_mm": [
+        20.0,
+        29.0,
+        34.0
+      ],
+      "stl": "models/purchased/servo_head_pitch.stl"
+    },
+    {
+      "name": "servo_head_yaw",
+      "color": [
+        0.12,
+        0.14,
+        0.15,
+        1
+      ],
+      "body": "head_yoke",
+      "kind": "actuator",
+      "mass_g": 18.0,
+      "note": "XL330-class smart servo envelope; confirm the case hole pattern before ordering",
+      "printed": false,
+      "dimensions_mm": [
+        20.0,
+        34.0,
+        29.0
+      ],
+      "stl": "models/purchased/servo_head_yaw.stl"
+    },
+    {
+      "name": "servo_head_roll",
+      "color": [
+        0.12,
+        0.14,
+        0.15,
+        1
+      ],
+      "body": "head",
+      "kind": "actuator",
+      "mass_g": 18.0,
+      "note": "XL330-class smart servo envelope; confirm the case hole pattern before ordering",
+      "printed": false,
+      "dimensions_mm": [
+        29.0,
+        20.0,
+        34.0
+      ],
+      "stl": "models/purchased/servo_head_roll.stl"
+    },
+    {
+      "name": "servo_jaw",
+      "color": [
+        0.12,
+        0.14,
+        0.15,
+        1
+      ],
+      "body": "head",
+      "kind": "actuator",
+      "mass_g": 18.0,
+      "note": "XL330-class smart servo envelope; confirm the case hole pattern before ordering",
+      "printed": false,
+      "dimensions_mm": [
+        34.0,
+        29.0,
+        20.0
+      ],
+      "stl": "models/purchased/servo_jaw.stl"
+    },
+    {
+      "name": "battery_pack",
+      "color": [
+        0.12,
+        0.14,
+        0.15,
+        1
+      ],
+      "body": "trunk",
+      "kind": "battery",
+      "mass_g": 95,
+      "note": "Removable 2S 18650 pack, 65 x 37 x 19 mm class, 7.4 V ~3000 mAh; slides out with the tail cover",
+      "printed": false,
+      "dimensions_mm": [
+        65.0,
+        37.0,
+        19.0
+      ],
+      "stl": "models/purchased/battery_pack.stl"
+    },
+    {
+      "name": "compute_board",
+      "color": [
+        0.1,
+        0.35,
+        0.25,
+        1
+      ],
+      "body": "trunk",
+      "kind": "electronics",
+      "mass_g": 30,
+      "note": "Single-board computer up to 50 x 27 mm on the trunk deck above the hip servos; a larger module needs the reserved head bay",
+      "printed": false,
+      "dimensions_mm": [
+        27.0,
+        50.0,
+        1.6
+      ],
+      "stl": "models/purchased/compute_board.stl"
+    },
+    {
+      "name": "camera_module_3",
+      "color": [
+        0.12,
+        0.14,
+        0.15,
+        1
+      ],
+      "body": "head",
+      "kind": "camera",
+      "mass_g": 4,
+      "note": "Raspberry Pi Camera Module 3 Standard class, 25 x 24 mm board; the nose bore is a 14 mm funnel, so the usable field of view is about 60 deg, narrower than the module rating",
+      "printed": false,
+      "dimensions_mm": [
+        1.1,
+        25.0,
+        24.0
+      ],
+      "stl": "models/purchased/camera_module_3.stl"
+    }
+  ],
+  "bodies": [
+    {
+      "name": "trunk",
+      "parent": null,
+      "pivot_mm": [
+        0.0,
+        0.0,
+        120.0
+      ],
+      "joint": null,
+      "axis": null
+    },
+    {
+      "name": "left_yaw2roll",
+      "parent": "trunk",
+      "pivot_mm": [
+        6.0,
+        17.5,
+        115.0
+      ],
+      "joint": "left_hip_yaw",
+      "axis": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "name": "left_hip",
+      "parent": "left_yaw2roll",
+      "pivot_mm": [
+        22.5,
+        17.5,
+        102.5
+      ],
+      "joint": "left_hip_roll",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "left_upper_leg",
+      "parent": "left_hip",
+      "pivot_mm": [
+        4.0,
+        42.5,
+        102.5
+      ],
+      "joint": "left_hip_pitch",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "name": "left_lower_leg",
+      "parent": "left_upper_leg",
+      "pivot_mm": [
+        -31.8,
+        38.5,
+        80.5
+      ],
+      "joint": "left_knee",
+      "axis": [
+        0.0,
+        -1.0,
+        0.0
+      ]
+    },
+    {
+      "name": "left_foot",
+      "parent": "left_lower_leg",
+      "pivot_mm": [
+        -31.8,
+        64.5,
+        38.5
+      ],
+      "joint": "left_ankle",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "name": "neck",
+      "parent": "trunk",
+      "pivot_mm": [
+        26.0,
+        14.5,
+        152.4
+      ],
+      "joint": "neck_pitch",
+      "axis": [
+        0.0,
+        -1.0,
+        0.0
+      ]
+    },
+    {
+      "name": "head_base",
+      "parent": "neck",
+      "pivot_mm": [
+        26.0,
+        14.5,
+        202.4
+      ],
+      "joint": "head_pitch",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "name": "head_yoke",
+      "parent": "head_base",
+      "pivot_mm": [
+        26.0,
+        0.0,
+        221.1
+      ],
+      "joint": "head_yaw",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "name": "head",
+      "parent": "head_yoke",
+      "pivot_mm": [
+        8.1,
+        0.0,
+        235.6
+      ],
+      "joint": "head_roll",
+      "axis": [
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "jaw",
+      "parent": "head",
+      "pivot_mm": [
+        26.0,
+        14.5,
+        242.0
+      ],
+      "joint": "jaw",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "name": "right_yaw2roll",
+      "parent": "trunk",
+      "pivot_mm": [
+        6.0,
+        -17.5,
+        115.0
+      ],
+      "joint": "right_hip_yaw",
+      "axis": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "name": "right_hip",
+      "parent": "right_yaw2roll",
+      "pivot_mm": [
+        22.5,
+        -17.5,
+        102.5
+      ],
+      "joint": "right_hip_roll",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "right_upper_leg",
+      "parent": "right_hip",
+      "pivot_mm": [
+        4.0,
+        -42.5,
+        102.5
+      ],
+      "joint": "right_hip_pitch",
+      "axis": [
+        0.0,
+        -1.0,
+        0.0
+      ]
+    },
+    {
+      "name": "right_lower_leg",
+      "parent": "right_upper_leg",
+      "pivot_mm": [
+        -31.8,
+        -38.5,
+        80.5
+      ],
+      "joint": "right_knee",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "name": "right_foot",
+      "parent": "right_lower_leg",
+      "pivot_mm": [
+        -31.8,
+        -64.5,
+        38.5
+      ],
+      "joint": "right_ankle",
+      "axis": [
+        0.0,
+        -1.0,
+        0.0
+      ]
+    }
+  ],
+  "printed_mass_g": 450.3,
+  "purchased_mass_g": 399.0
+}

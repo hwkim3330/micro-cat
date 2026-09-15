@@ -1,0 +1,179 @@
+{
+  "scope": "Exact STEP intersections at HOME plus single-joint sampled sweeps; purchased items as bounding boxes. Not a continuous sweep, tolerance, cable or fastener check.",
+  "static_pairs": 703,
+  "static_overlaps": [],
+  "assembly_cleared": true,
+  "motion": [
+    {
+      "joint": "left_hip_yaw",
+      "angles_rad": [
+        -0.52,
+        -0.26,
+        0.26,
+        0.52
+      ],
+      "collisions": []
+    },
+    {
+      "joint": "left_hip_roll",
+      "angles_rad": [
+        -0.4,
+        -0.2,
+        0.175,
+        0.35
+      ],
+      "collisions": []
+    },
+    {
+      "joint": "left_hip_pitch",
+      "angles_rad": [
+        -1.57,
+        -0.785,
+        0.45,
+        0.9
+      ],
+      "collisions": []
+    },
+    {
+      "joint": "left_knee",
+      "angles_rad": [
+        -1.57,
+        -0.785,
+        0.55,
+        1.1
+      ],
+      "collisions": []
+    },
+    {
+      "joint": "left_ankle",
+      "angles_rad": [
+        -0.55,
+        -0.275,
+        0.275,
+        0.55
+      ],
+      "collisions": []
+    },
+    {
+      "joint": "right_hip_yaw",
+      "angles_rad": [
+        -0.52,
+        -0.26,
+        0.26,
+        0.52
+      ],
+      "collisions": []
+    },
+    {
+      "joint": "right_hip_roll",
+      "angles_rad": [
+        -0.35,
+        -0.175,
+        0.2,
+        0.4
+      ],
+      "collisions": []
+    },
+    {
+      "joint": "right_hip_pitch",
+      "angles_rad": [
+        -0.9,
+        -0.45,
+        0.785,
+        1.57
+      ],
+      "collisions": []
+    },
+    {
+      "joint": "right_knee",
+      "angles_rad": [
+        -1.1,
+        -0.55,
+        0.785,
+        1.57
+      ],
+      "collisions": []
+    },
+    {
+      "joint": "right_ankle",
+      "angles_rad": [
+        -0.55,
+        -0.275,
+        0.275,
+        0.55
+      ],
+      "collisions": []
+    },
+    {
+      "joint": "neck_pitch",
+      "angles_rad": [
+        -0.2,
+        -0.1,
+        0.325,
+        0.65
+      ],
+      "collisions": []
+    },
+    {
+      "joint": "head_pitch",
+      "angles_rad": [
+        -0.6,
+        -0.3,
+        0.3,
+        0.6
+      ],
+      "collisions": []
+    },
+    {
+      "joint": "head_yaw",
+      "angles_rad": [
+        -2.0,
+        -1.0,
+        1.0,
+        2.0
+      ],
+      "collisions": []
+    },
+    {
+      "joint": "head_roll",
+      "angles_rad": [
+        -0.15,
+        -0.075,
+        0.075,
+        0.15
+      ],
+      "collisions": []
+    },
+    {
+      "joint": "jaw",
+      "angles_rad": [
+        0.05,
+        0.1
+      ],
+      "collisions": []
+    }
+  ],
+  "motion_cleared": true,
+  "step_sha256": {
+    "left_yaw2roll": "650c846fff6f43c0f02fdaa1a4338137bd247f27a1dcbb16793f3e6a0c22ecde",
+    "left_hip": "1c628590d00cf1f1985df7dc96dbeb4e3b7784e58ee992e1ceaa4eb38960bfaf",
+    "left_upper_leg": "761a1992352c143276c8b46d7b03972c6cdfc39438f04618f265fc6e838519ba",
+    "left_lower_leg": "59801ea4fea2242a5df0c8a92b3e06b9613016ef3e8f995f81fc0f87877b60d7",
+    "left_foot": "e80489ab95e793d6c4408ccc71ee04101ee94239cf9a276ed462e31e9a6ce083",
+    "right_yaw2roll": "8f9676a52d37a927227e254bf831dd448b9fc35193abfe4c1239b07437a8d5be",
+    "right_hip": "4631b617000178e095b252c9b271fe69019983eddaebd2155ebeed83dd84c2b9",
+    "right_upper_leg": "ff15d3dca92204e03c5215aece4bb8bffec253a9ebdad7d7114a3b997c428560",
+    "right_lower_leg": "d681e6ab0c471778aedb4e31057f81d3a804f1a966e057c27fac01d0bd408f53",
+    "right_foot": "b3a6223708e2435de642b84353f936d71576e2ee379036a33e2a2a3fe07d75fe",
+    "chassis": "388e2988865eca00895e67dbf92aaf31dd0f9a7e0ea27e7282d251979834f323",
+    "torso_shell": "82e440d3a46ea2388eaaa2727e767703e6ea46a98584b60649d20de2d8841497",
+    "tail_cover": "2118d9c4acdbbc57c905a5771cad170dbddd73b8406710aea84659dc42e1d851",
+    "neck_link": "c2d1c032076a580a5211d193c28ef58e8aa5d8b7e9de08d57d2775be50efc277",
+    "neck_sleeve": "9a32b58e60d630edeea7bc7bf8777d9d73ff30c1b12980a7c96e7bd4a91fc221",
+    "head_base": "2a85fc8cf5f23a0f7d6a7f1cd62fb1db719b0ed63edf8d12a215db3c4960fac7",
+    "head_yoke": "212adb082f84d746601855dc2d50b6a2333dfd46f5105be53d51b6ea86392f8e",
+    "head_frame": "2a221945f6ee69c6ed2491a7dd61efd9c3dba1b548fc384b1f286fd16143d67f",
+    "skull": "dc3b9283c0bd9d23dc8cd20e61a3b5b8e062be06f2f4d92b6ab6c2ce9263ee5a",
+    "jaw_chin": "49ae1977870074481bb09fdfc1500e17874e575dc789d9e85fc702d012342122"
+  }
+}
