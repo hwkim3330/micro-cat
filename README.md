@@ -2,7 +2,7 @@
 
 **소유자 hwkim3330이 제작·판매를 목표로 개발하는 상업용 독자 설계 소형 두발 로봇.** 둥근 머리, 쉘과 한 몸인 귀, 말려 올라간 꼬리, 뒤로 길어진 앞발. Microduck의 14축 정책 인터페이스(61 관측 → 14 행동, 50 Hz)를 그대로 쓰되 기구·외장·서보 배치·전장 자리는 독자 설계입니다.
 
-관련 저장소: [Micro X](https://github.com/hwkim3330/micro-x)(티렉스 계열, 같은 도구·같은 소유자) · [Micro Rex](https://github.com/hwkim3330/micro-rex)(원본 기구를 그대로 쓰는 **비상업** 비교 시험기).
+관련 저장소: [Micro X](https://github.com/hwkim3330/micro-x)(티렉스 계열, 같은 도구·같은 소유자) · [Micro Rex](https://github.com/hwkim3330/micro-rex)(원본 기구를 그대로 쓰는 **비상업** 비교 시험기) · [micro-cat-fly](https://github.com/hwkim3330/micro-cat-fly)(고정된 초파리 커넥톰으로 목표 방향 명령을 만드는 **비상업** 연구 저장소).
 
 **현재 단계: Rev 1 구동 설계 · 디지털 검증. 실물 출력·조립·보행·내구 시험은 아직 없습니다. 판매 가능한 완제품이 아닙니다.**
 
