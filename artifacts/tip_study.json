@@ -3,25 +3,25 @@
  "pose": "policy HOME",
  "method": "quasi-static rocking: rotate, drop to the floor, recompute contacts, fall when every contact is behind the centre of mass",
  "model_sha256": {
-  "models/micro_cat_14.xml": "25848d57058693cc43af1dcfd29301cac8a55812b2b8c4fc84a22913770eba77",
-  "/Users/parksik/micro-trex/micro-x/models/micro_x_14.xml": "8c065bce2c9a28ecedb1bb76c9a181fa88891852aeec8a0ebe913f394316eb76"
+  "models/micro_cat_14.xml": "0f282819d4238e5b7c3046d5446266dcd329d62e02139b121fbfe45fe2901d17",
+  "/Users/parksik/micro-trex/micro-x/models/micro_x_14.xml": "e68b7735f9ede610309209ac71d81a16f58724300d28687b65b7670ba060021a"
  },
  "results": [
   {
    "model": "models/micro_cat_14.xml",
-   "mass_g": 864.0,
-   "com_height_above_sole_mm": 135.6,
+   "mass_g": 872.5,
+   "com_height_above_sole_mm": 135.7,
    "tip_fwd_deg": 19.25,
    "tip_aft_deg": 17.7,
    "tip_lat_deg": 25.25
   },
   {
    "model": "/Users/parksik/micro-trex/micro-x/models/micro_x_14.xml",
-   "mass_g": 837.8,
-   "com_height_above_sole_mm": 137.7,
-   "tip_fwd_deg": 17.25,
-   "tip_aft_deg": 4.7,
-   "tip_lat_deg": 24.25
+   "mass_g": 834.3,
+   "com_height_above_sole_mm": 138.0,
+   "tip_fwd_deg": 18.0,
+   "tip_aft_deg": 5.5,
+   "tip_lat_deg": 24.9
   }
  ],
  "contact_tested": false,

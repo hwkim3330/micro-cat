@@ -62,4 +62,15 @@ class ContractTests(unittest.TestCase):
         # falls back to the no-spur value and the shipped lift is one step from doing the same.
         for lift in ['0.5 mm','1.0 mm','1.5 mm']:
             self.assertGreater(by[lift]['margin_deg'],2.0,lift+' barely engages or does not engage')
+    def test_no_horn_plate_is_blocked_by_its_own_link(self):
+        f=json.loads((R/'artifacts/fasteners.json').read_text())
+        self.assertEqual(f['bolt_path_defects'],0,
+            'a horn plate whose bolt paths are filled by the ribs unioned onto it cannot be assembled')
+        self.assertGreater(len(f['bolt_access']),0)
+    def test_every_horn_plate_survives_its_own_servo_at_stall(self):
+        s=json.loads((R/'artifacts/strength.json').read_text())
+        self.assertEqual(s['plates_below_target'],[])
+        for name,v in s['horn_plates'].items():
+            self.assertGreaterEqual(v['safety_factor'],s['target_safety_factor'],name)
+        self.assertFalse(s['physical_test']);self.assertFalse(s['fea'])
 if __name__=='__main__':unittest.main()

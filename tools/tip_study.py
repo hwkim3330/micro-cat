@@ -6,7 +6,8 @@ import hashlib,json,sys
 from pathlib import Path
 R=Path(__file__).resolve().parents[1];sys.path.insert(0,str(R/"tools"))
 from tip_study_lib import study,rel,__doc__ as LIBDOC
-paths=[R/'models/micro_cat_14.xml']+[Path(a) for a in sys.argv[1:]]
+MODEL=next(p for p in sorted((R/'models').glob('*_14.xml')))  # this repo's own 14-axis model
+paths=[MODEL]+[Path(a) for a in sys.argv[1:]]
 res=[study(p) for p in paths]
 (R/'artifacts/tip_study.json').write_text(json.dumps(dict(
     scope=' '.join(l.strip() for l in __doc__.strip().split('\n')[2:8]),pose='policy HOME',

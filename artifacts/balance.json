@@ -1,10 +1,10 @@
 {
   "scope": "HOME pose, both feet flat; CAD-derived masses (PLA solid density + purchased catalogue masses); fasteners, cables and print infill not modelled.",
-  "mass_g": 864.0,
+  "mass_g": 872.5,
   "center_of_mass_mm": [
-    -12.17,
-    0.29,
-    139.59
+    -12.12,
+    0.26,
+    139.67
   ],
   "support_hull_xy_mm": [
     [
@@ -24,15 +24,15 @@
       73.0
     ]
   ],
-  "minimum_static_margin_mm": 16.17,
+  "minimum_static_margin_mm": 16.12,
   "bodies": [
     {
       "body": "trunk_base",
-      "mass_g": 271.5,
+      "mass_g": 276.7,
       "com_mm": [
-        -36.9,
-        0.2,
-        133.8
+        -36.8,
+        0.1,
+        133.5
       ]
     },
     {
@@ -46,11 +46,11 @@
     },
     {
       "body": "x_left_hip",
-      "mass_g": 6.4,
+      "mass_g": 6.3,
       "com_mm": [
         19.4,
-        28.6,
-        99.2
+        28.8,
+        99.1
       ]
     },
     {
@@ -73,7 +73,7 @@
     },
     {
       "body": "x_left_foot",
-      "mass_g": 38.8,
+      "mass_g": 38.7,
       "com_mm": [
         -41.3,
         51.0,
@@ -82,11 +82,11 @@
     },
     {
       "body": "x_neck",
-      "mass_g": 65.4,
+      "mass_g": 69.2,
       "com_mm": [
-        26.1,
-        -2.9,
-        177.5
+        25.9,
+        -3.0,
+        177.2
       ]
     },
     {
@@ -94,16 +94,16 @@
       "mass_g": 4.4,
       "com_mm": [
         27.4,
-        6.0,
-        215.2
+        5.9,
+        215.3
       ]
     },
     {
       "body": "x_head_yoke",
-      "mass_g": 33.6,
+      "mass_g": 33.4,
       "com_mm": [
         25.4,
-        -9.0,
+        -9.1,
         238.0
       ]
     },
@@ -118,11 +118,11 @@
     },
     {
       "body": "x_jaw",
-      "mass_g": 6.6,
+      "mass_g": 6.9,
       "com_mm": [
-        52.9,
-        2.7,
-        227.9
+        51.6,
+        3.2,
+        228.5
       ]
     },
     {
@@ -136,11 +136,11 @@
     },
     {
       "body": "x_right_hip",
-      "mass_g": 6.4,
+      "mass_g": 6.3,
       "com_mm": [
         19.4,
-        -28.6,
-        99.2
+        -28.8,
+        99.1
       ]
     },
     {
@@ -163,7 +163,7 @@
     },
     {
       "body": "x_right_foot",
-      "mass_g": 38.8,
+      "mass_g": 38.7,
       "com_mm": [
         -41.3,
         -51.0,
@@ -171,6 +171,6 @@
       ]
     }
   ],
-  "model_sha256": "25848d57058693cc43af1dcfd29301cac8a55812b2b8c4fc84a22913770eba77",
+  "model_sha256": "0f282819d4238e5b7c3046d5446266dcd329d62e02139b121fbfe45fe2901d17",
   "physical_verified": false
 }

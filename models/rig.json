@@ -38,7 +38,7 @@
    "joint": null,
    "axis": null,
    "home_rad": null,
-   "mass_kg": 0.27154
+   "mass_kg": 0.27669
   },
   {
    "name": "left_yaw2roll",
@@ -72,7 +72,7 @@
     0.0
    ],
    "home_rad": -0.0873,
-   "mass_kg": 0.00644
+   "mass_kg": 0.00628
   },
   {
    "name": "left_upper_leg",
@@ -123,7 +123,7 @@
     0.0
    ],
    "home_rad": 0.453,
-   "mass_kg": 0.03881
+   "mass_kg": 0.03872
   },
   {
    "name": "neck",
@@ -140,7 +140,7 @@
     0.0
    ],
    "home_rad": 0.3491,
-   "mass_kg": 0.06536
+   "mass_kg": 0.06917
   },
   {
    "name": "head_base",
@@ -157,7 +157,7 @@
     0.0
    ],
    "home_rad": 0.3491,
-   "mass_kg": 0.00441
+   "mass_kg": 0.00437
   },
   {
    "name": "head_yoke",
@@ -174,7 +174,7 @@
     1.0
    ],
    "home_rad": 0,
-   "mass_kg": 0.03363
+   "mass_kg": 0.03341
   },
   {
    "name": "head",
@@ -208,7 +208,7 @@
     0.0
    ],
    "home_rad": 0.0,
-   "mass_kg": 0.00661
+   "mass_kg": 0.00693
   },
   {
    "name": "right_yaw2roll",
@@ -242,7 +242,7 @@
     0.0
    ],
    "home_rad": 0.0873,
-   "mass_kg": 0.00644
+   "mass_kg": 0.00628
   },
   {
    "name": "right_upper_leg",
@@ -293,7 +293,7 @@
     0.0
    ],
    "home_rad": -0.453,
-   "mass_kg": 0.03881
+   "mass_kg": 0.03872
   }
  ],
  "policy_joints": [
@@ -312,5 +312,5 @@
   "right_knee",
   "right_ankle"
  ],
- "mass_kg": 0.864
+ "mass_kg": 0.8725
 }

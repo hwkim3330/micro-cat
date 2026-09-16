@@ -20,7 +20,7 @@ R=Path(__file__).resolve().parents[1]
 for folder in ['models/step','models/print','artifacts','models/purchased']:(R/folder).mkdir(parents=True,exist_ok=True)
 SHELL=[.96,.94,.90,1];ACCENT=[.97,.66,.62,1];GRAPHITE=[.22,.25,.26,1];DARK=[.12,.14,.15,1] # SHELL = warm off-white body, ACCENT = pink nose / paw pads / inner ear
 DENSITY=0.00124 # g/mm3 PLA solid-equivalent; slicer mass with infill is lower
-WALL=3.0 # shell wall; Rev C raised from 2.4 for drop strength
+WALL=3.0 # shell wall; raised from 2.4 for drop strength
 ROLL_SWEEP=0.35 # rad of hip-roll clearance carved into the hip bracket
 SPUR_LIFT=1.0   # mm the heel spur sits above the sole plane; it must clear the floor while walking
 SPUR_BACK=-86   # mm; the spur must reach the floor BEFORE the sole-only tipping angle (4.75 deg),
@@ -47,7 +47,9 @@ def curve_loft(nodes):
 def keep_solid(shape,name):
     shape=shape.clean();solids=shape.solids().vals()
     if len(solids)!=1:
-        big=max(solids,key=lambda s:s.Volume());small=sum(s.Volume() for s in solids)-big.Volume()
+        big=max(solids,key=lambda s:s.Volume());small=sum(abs(s.Volume()) for s in solids if s is not big)
+        # abs() matters: a failed boolean can leave an inverted solid whose negative volume
+        # cancelled the sum and let a 1.7 kg broken tail through this guard unnoticed.
         if small>200:raise ValueError(f'{name}: {len(solids)} solids, {small:.1f} mm3 loose')
         for sl in solids:
             if sl is not big:bb=sl.BoundingBox();print(f'  WARNING {name}: dropped {sl.Volume():.1f} mm3 sliver at x {bb.xmin:.1f}..{bb.xmax:.1f} y {bb.ymin:.1f}..{bb.ymax:.1f} z {bb.zmin:.1f}..{bb.zmax:.1f}')
@@ -56,6 +58,13 @@ def keep_solid(shape,name):
     return shape
 ROT={'Z':None,'-Z':(math.pi,[1,0,0]),'Y':(math.pi/2,[1,0,0]),'-Y':(-math.pi/2,[1,0,0]),'X':(math.pi/2,[0,1,0]),'-X':(-math.pi/2,[0,1,0])}
 def add(name,shape,color,body,print_axis='Z',note='',group='frame'):
+    # Re-open every horn bolt path this link owns. Ribs and shells unioned on top of a horn
+    # plate silently fill its holes, and a plate you cannot bolt is not a plate.
+    for s in L.plates_on(body):
+        tool=S.horn_holes(s['P'],s['h'],s['d'])
+        a=shape.val().BoundingBox();c=tool.val().BoundingBox()
+        if any(getattr(a,k+'max')<getattr(c,k+'min')-.5 or getattr(c,k+'max')<getattr(a,k+'min')-.5 for k in 'xyz'):continue
+        shape=shape.cut(tool)
     shape=keep_solid(shape,name)
     path=R/'models/step'/f'{name}.step';cq.exporters.export(shape,str(path))
     restored=cq.importers.importStep(str(path))
@@ -83,7 +92,7 @@ def buy(name,shape,color,body,mass_g,note,kind):
 
 for s in L.SERVOS:
     buy('servo_'+s['name'],S.envelope(s['P'],s['h'],s['d']),DARK,s['body'],S.MASS_G,'XL330-class smart servo envelope; confirm the case hole pattern before ordering','actuator')
-def horn(name,**kw):s=L.get(name);return S.horn_plate(s['P'],s['h'],s['d'],**kw)
+def horn(name,**kw):s=L.get(name);return S.horn_plate(s['P'],s['h'],s['d'],name=name,**kw)
 def chan(name,**kw):s=L.get(name);return S.channel(s['P'],s['h'],s['d'],**kw)
 def pock(name,**kw):s=L.get(name);return S.pocket(s['P'],s['h'],s['d'],**kw)
 
@@ -109,7 +118,7 @@ def build_leg(side):
     hp=hp.cut(roof.rotate(tuple(P),tuple(ax),math.degrees(ROLL_SWEEP))).cut(roof.rotate(tuple(P),tuple(ax),-math.degrees(ROLL_SWEEP)))
     add(n('hip'),hp,GRAPHITE,n('hip'),'-Y' if g>0 else 'Y','Hip corner bracket: roll horn plate and pitch horn plate joined by one rib. Print on the pitch plate face.')
     # Upper leg: open-sided shell holding the hip pitch and knee servos side by side.
-    ul=sb(-45.2,17,42.9,75.4,68.5,116,6).cut(sb(-42.2,13.9,42.5,72.4,70.6,113))
+    ul=sb(-45.2,17,42.9,75.4,68.5,116,6).cut(sb(-42.2,13.9,42.5,72.4,71.5,113))
     ul=ul.cut(sb(-60,60,40,80,0,71.5)) # open bottom so the shin can fold up
     add(n('upper_leg'),ul,SHELL,n('upper_leg'),'Y' if g>0 else '-Y','Thigh shell around the hip pitch and knee servos, open on the inboard face. Print on the outboard face; the cavity opens upward, no support.',group='shell')
     # Lower leg: knee horn plate over an inboard plate and a channel around the ankle servo.
@@ -145,13 +154,18 @@ for g in (1,-1):chassis=chassis.cut(box(-18.9,15.9,g*6.9 if g>0 else -28.1,g*28.
 chassis=chassis.union(box(-27,5.5,-26.5,26.5,147,149.5).cut(box(-24,2.5,-23.5,23.5,146,150.5))) # electronics deck
 for x in [-24,2.5]:
     for y in [-23.5,23.5]:chassis=chassis.cut(cyl((x,y,146),'Z',1.15,6))
-neck_plate=box(6,39,14.5,17.5,145.3,167.4)
-for a in range(4):
-    t=a*math.pi/2;neck_plate=neck_plate.cut(cyl((26+6*math.cos(t),18,152.4+6*math.sin(t)),'Y',1.15,-6))
+neck_plate=box(6,39,14.5,17.5,145.3,162.0)
+# The lowest horn bolt sits 1.1 mm above the plate's bottom, so its access bore needs
+# more plate under it - but dropping the whole bottom edge to 143 put the plate inside
+# the hip yaw servo envelope. Only the part outboard of that servo (x > 15) goes lower.
+neck_plate=neck_plate.union(box(15,39,14.5,17.5,143.0,145.3)) # stops 3.6 mm above the top horn bolt; the old 167.4
+# top was what the neck cover's lower rear corner hit, which cost 29 deg of neck pitch.
+# The bolt pattern is cut systematically in add(), not by hand here.
 neck_plate=neck_plate.cut(cyl((26,18,152.4),'Y',4.2,-6))
 chassis=chassis.union(neck_plate)
 tray=box(-92,-25,-14,14,118,120).union(box(-92,-25,-20.9,-18.9,120,136)).union(box(-92,-25,18.9,20.9,120,136)).union(box(-92,-89.6,-20.9,20.9,120,136))
-chassis=chassis.cut(box(-50,-20.5,-20,20,117,121.5)) # battery corridor through the floor
+chassis=chassis.cut(box(-50,-22.5,-20,20,117,121.5)) # battery corridor; kept 3.6 mm clear of the
+# servo drop-through at x -18.9 so the floor between them is not a 1.6 mm rib (tools/strength.py)
 chassis=chassis.union(tray).cut(cyl((-55,25,128),'Y',1.3,-50))
 add('chassis',chassis,GRAPHITE,'trunk','Z','Chassis: floor with two hip-yaw servo boxes, neck horn plate, battery tray and compute board wall. Print floor down; the servo boxes bridge 21 mm.')
 buy('battery_pack',rbox(-89,-24,-18.5,18.5,120,139,2),DARK,'trunk',95,'Removable 2S 18650 pack, 65 x 37 x 19 mm class, 7.4 V ~3000 mAh; slides out with the tail cover','battery')
@@ -175,8 +189,13 @@ def loft(sections):
 # Tail: a cat curl. Sections sit on planes normal to the centreline so the loft stays clean
 # where it turns upward; the straight front half is the battery cover.
 TAIL=[(-38,129,31,21),(-68,129,31,21),(-93,130,30,20),(-106,144,18,11),(-113,162,10,6),(-114,177,4.5,3),(-113,186,1.2,.9)]
-tail=curve_loft(TAIL).cut(curve_loft([(x,z,a-WALL,b-WALL) for x,z,a,b in TAIL[:4]]+[(-107,158,3.2,2.0)])) # the straight run must clear the battery tray to x -89
-tail=tail.cut(cyl((-55,25,128),'Y',1.7,-50)).cut(box(-38,60,-60,60,100,220))
+# The cavity starts AHEAD of the outer loft and its tip follows the outer centreline. Both
+# matter: an inner tip placed off the centreline breaches the outer wall, and an inner that
+# starts on the same plane as the outer leaves a zero-thickness cap. Either one splits the
+# part into several solids, and the old keep_solid summed their signed volumes and let a
+# 1.7 kg broken tail through.
+tail=curve_loft(TAIL).cut(curve_loft([(-30,129,31-WALL,21-WALL)]+[(x,z,a-WALL,b-WALL) for x,z,a,b in TAIL[1:5]]+[(-113.5,170,2.5,1.6)]))
+tail=tail.cut(cyl((-55,25,128),'Y',1.7,-50))
 add('tail_cover',tail,SHELL,'trunk','-X','Tail: curls up behind the body and doubles as the battery cover. Slides over the tray and takes two M3 into it.',group='shell')
 
 # ---------------------------------------------------------------- neck and head
@@ -184,12 +203,14 @@ print('neck and head')
 neck=box(13.6,38.4,-17.4,14,140.5,212.2).cut(box(15.6,36.4,-15.4,20,142.5,212.3)) # open top: the head base sweeps just above it
 neck=neck.cut(box(13,16,-20,20,100,145)) # the hip yaw servos pass within 0.5 mm here
 add('neck_link',neck,GRAPHITE,'neck','-Y','Neck tube around the stacked neck-pitch and head-pitch servos, open on the horn side. Print on the closed face.')
-sleeve=rbox(10.5,41.5,-20.5,16.9,148,216,9).cut(rbox(12.9,39.1,-18.1,19,146,218,2)) # rounded cover over the neck column
+sleeve=rbox(9.9,41.5,-20.5,16.9,148,211,5).cut(rbox(12.6,38.9,-18.2,19,146,213,1.0)) # grow outward for a
+# 3 mm wall: shrinking the cavity instead left 0.1 mm to the neck tube and they overlapped.
+# The +x face cannot grow: the head base sweeps 0.6 mm off it. # rounded cover over the neck column
 sleeve=sleeve.cut(box(9,44,14.5,24,146,170)).cut(box(9,44,14.5,24,194,218)).cut(box(9,44,-24,24,146,150)).cut(box(9,44,-24,24,212,218)) # horn side open only where the two horn plates pass
 add('neck_sleeve',sleeve,SHELL,'neck','-Y','Neck cover: rounded shell over the neck column, open on the horn side; pitches with the neck.',group='shell')
 head_base=box(20,39,14.5,17.5,196,221.1).union(horn('head_yaw',width=26,length=35))
 add('head_base',head_base,GRAPHITE,'head_base','-Z','Head base: head-pitch horn plate joined to the head-yaw horn plate. The only part that stays still while the head yaws.')
-yoke=chan('head_yaw',faces=('y+','y-','far','back')).union(horn('head_roll',width=16,length=20))
+yoke=chan('head_yaw',faces=('y+','y-','far','back')).union(horn('head_roll',width=18,length=20))
 for g in (1,-1):yoke=yoke.union(box(8.1,15.6,min(g*5,g*8),max(g*5,g*8),225.6,245.6))
 add('head_yoke',yoke,GRAPHITE,'head_yoke','-Z','Yoke: box around the head-yaw servo with two ribs out to the head-roll horn plate.')
 
@@ -247,7 +268,7 @@ import appearance;appearance.EYE=EYE;appearance.EAR=EAR;appearance.MUZZLE=MUZZLE
 add('skull',skull,SHELL,'head','Z','Head: one-piece round cat cranium with a short muzzle, solid ears and a nose lens hood. Three M3 down into the head frame; eyes, ear insides and nose are painted, not parts.',group='shell')
 
 CHIN=(58,0,228.5);CHIN_R=(17,20,8.5)
-chin=horn('jaw',width=13,length=18)
+chin=horn('jaw',width=20,length=18)
 chin=chin.union(ell(CHIN,CHIN_R).cut(ell(CHIN,tuple(v-WALL for v in CHIN_R))).cut(box(-60,160,-60,60,231.2,320))) # must clear the camera board, whose underside is z 230
 chin=chin.union(box(30,52,11.5,14.5,226,236))
 add('jaw_chin',chin,SHELL,'jaw','-Z','Lower jaw: rounded chin cup on a single arm bolted to the jaw servo horn.',group='shell')
@@ -272,5 +293,6 @@ report=dict(revision='Rev1 design-pose actuated chibi cat',parts=[{k:v for k,v i
     bodies=[dict(name=b,parent=L.PARENT[b],pivot_mm=np.round(pivots[b],3).tolist(),joint=(L.JOINT_OF_BODY[b]['name'] if b in L.JOINT_OF_BODY else None),
                  axis=(np.round(L.JOINT_OF_BODY[b]['axis'],6).tolist() if b in L.JOINT_OF_BODY else None)) for b in L.BODIES],
     printed_mass_g=round(sum(p['mass_g'] for p in parts),1),purchased_mass_g=round(sum(p['mass_g'] for p in purchased),1))
+report['horn_plates']=S.PLATES
 (R/'artifacts/parts.json').write_text(json.dumps(report,indent=2)+'\n')
 print('Built',len(parts),'printed parts',report['printed_mass_g'],'g +',len(purchased),'purchased items',report['purchased_mass_g'],'g')

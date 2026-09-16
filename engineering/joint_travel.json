@@ -96,15 +96,15 @@
     },
     "neck_pitch": {
       "min_rad": -0.2,
-      "max_rad": 0.65,
+      "max_rad": 0.4,
       "catalogue_rad": [
         -1.05,
         1.05
       ]
     },
     "head_pitch": {
-      "min_rad": -0.6,
-      "max_rad": 0.6,
+      "min_rad": -0.85,
+      "max_rad": 0.95,
       "catalogue_rad": [
         -1.57,
         1.57
@@ -119,7 +119,7 @@
       ]
     },
     "head_roll": {
-      "min_rad": -0.15,
+      "min_rad": -0.1,
       "max_rad": 0.15,
       "catalogue_rad": [
         -0.44,

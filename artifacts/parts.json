@@ -42,8 +42,8 @@
         38.1,
         29.27
       ],
-      "volume_mm3": 5197.5,
-      "mass_g": 6.44,
+      "volume_mm3": 5061.1,
+      "mass_g": 6.28,
       "step": "models/step/left_hip.step",
       "stl": "models/print/left_hip.stl"
     },
@@ -111,8 +111,8 @@
         46.0,
         38.0
       ],
-      "volume_mm3": 31300.8,
-      "mass_g": 38.81,
+      "volume_mm3": 31227.4,
+      "mass_g": 38.72,
       "step": "models/step/left_foot.step",
       "stl": "models/print/left_foot.stl"
     },
@@ -157,8 +157,8 @@
         38.1,
         29.27
       ],
-      "volume_mm3": 5197.5,
-      "mass_g": 6.44,
+      "volume_mm3": 5061.1,
+      "mass_g": 6.28,
       "step": "models/step/right_hip.step",
       "stl": "models/print/right_hip.stl"
     },
@@ -226,8 +226,8 @@
         46.0,
         38.0
       ],
-      "volume_mm3": 31300.8,
-      "mass_g": 38.81,
+      "volume_mm3": 31227.4,
+      "mass_g": 38.72,
       "step": "models/step/right_foot.step",
       "stl": "models/print/right_foot.stl"
     },
@@ -247,10 +247,10 @@
       "dimensions_mm": [
         131.0,
         61.98,
-        51.9
+        46.5
       ],
-      "volume_mm3": 35750.4,
-      "mass_g": 44.33,
+      "volume_mm3": 35642.6,
+      "mass_g": 44.2,
       "step": "models/step/chassis.step",
       "stl": "models/print/chassis.stl"
     },
@@ -291,12 +291,12 @@
       "printed": true,
       "print_axis": "-X",
       "dimensions_mm": [
-        64.58,
-        66.39,
+        81.06,
+        66.38,
         81.59
       ],
-      "volume_mm3": 30242.4,
-      "mass_g": 37.5,
+      "volume_mm3": 34323.4,
+      "mass_g": 42.56,
       "step": "models/step/tail_cover.step",
       "stl": "models/print/tail_cover.stl"
     },
@@ -337,12 +337,12 @@
       "printed": true,
       "print_axis": "-Y",
       "dimensions_mm": [
-        31.0,
-        34.52,
-        61.12
+        31.6,
+        36.84,
+        60.44
       ],
-      "volume_mm3": 10780.1,
-      "mass_g": 13.37,
+      "volume_mm3": 13852.3,
+      "mass_g": 17.18,
       "step": "models/step/neck_sleeve.step",
       "stl": "models/print/neck_sleeve.stl"
     },
@@ -364,8 +364,8 @@
         35.0,
         25.1
       ],
-      "volume_mm3": 3559.8,
-      "mass_g": 4.41,
+      "volume_mm3": 3523.0,
+      "mass_g": 4.37,
       "step": "models/step/head_base.step",
       "stl": "models/print/head_base.stl"
     },
@@ -387,8 +387,8 @@
         37.8,
         32.4
       ],
-      "volume_mm3": 12601.1,
-      "mass_g": 15.63,
+      "volume_mm3": 12429.4,
+      "mass_g": 15.41,
       "step": "models/step/head_yoke.step",
       "stl": "models/print/head_yoke.stl"
     },
@@ -454,10 +454,10 @@
       "dimensions_mm": [
         58.0,
         39.97,
-        28.5
+        32.0
       ],
-      "volume_mm3": 5347.2,
-      "mass_g": 6.63,
+      "volume_mm3": 5602.3,
+      "mass_g": 6.95,
       "step": "models/step/jaw_chin.step",
       "stl": "models/print/jaw_chin.stl"
     }
@@ -1062,6 +1062,125 @@
       ]
     }
   ],
-  "printed_mass_g": 466.3,
-  "purchased_mass_g": 399.0
+  "printed_mass_g": 474.6,
+  "purchased_mass_g": 399.0,
+  "horn_plates": {
+    "left_hip_yaw": {
+      "width_mm": 26,
+      "length_mm": 30,
+      "thickness_mm": 3.0,
+      "bolt_circle_r_mm": 6.0,
+      "bolt_hole_r_mm": 1.1,
+      "bolts": 4,
+      "bolt_edge_mm": 5.9
+    },
+    "left_hip_roll": {
+      "width_mm": 26,
+      "length_mm": 30,
+      "thickness_mm": 3.0,
+      "bolt_circle_r_mm": 6.0,
+      "bolt_hole_r_mm": 1.1,
+      "bolts": 4,
+      "bolt_edge_mm": 5.9
+    },
+    "left_hip_pitch": {
+      "width_mm": 26,
+      "length_mm": 22,
+      "thickness_mm": 3.0,
+      "bolt_circle_r_mm": 6.0,
+      "bolt_hole_r_mm": 1.1,
+      "bolts": 4,
+      "bolt_edge_mm": 5.9
+    },
+    "left_knee": {
+      "width_mm": 22,
+      "length_mm": 26,
+      "thickness_mm": 3.0,
+      "bolt_circle_r_mm": 6.0,
+      "bolt_hole_r_mm": 1.1,
+      "bolts": 4,
+      "bolt_edge_mm": 3.9
+    },
+    "left_ankle": {
+      "width_mm": 20,
+      "length_mm": 26,
+      "thickness_mm": 3.0,
+      "bolt_circle_r_mm": 6.0,
+      "bolt_hole_r_mm": 1.1,
+      "bolts": 4,
+      "bolt_edge_mm": 2.9
+    },
+    "right_hip_yaw": {
+      "width_mm": 26,
+      "length_mm": 30,
+      "thickness_mm": 3.0,
+      "bolt_circle_r_mm": 6.0,
+      "bolt_hole_r_mm": 1.1,
+      "bolts": 4,
+      "bolt_edge_mm": 5.9
+    },
+    "right_hip_roll": {
+      "width_mm": 26,
+      "length_mm": 30,
+      "thickness_mm": 3.0,
+      "bolt_circle_r_mm": 6.0,
+      "bolt_hole_r_mm": 1.1,
+      "bolts": 4,
+      "bolt_edge_mm": 5.9
+    },
+    "right_hip_pitch": {
+      "width_mm": 26,
+      "length_mm": 22,
+      "thickness_mm": 3.0,
+      "bolt_circle_r_mm": 6.0,
+      "bolt_hole_r_mm": 1.1,
+      "bolts": 4,
+      "bolt_edge_mm": 5.9
+    },
+    "right_knee": {
+      "width_mm": 22,
+      "length_mm": 26,
+      "thickness_mm": 3.0,
+      "bolt_circle_r_mm": 6.0,
+      "bolt_hole_r_mm": 1.1,
+      "bolts": 4,
+      "bolt_edge_mm": 3.9
+    },
+    "right_ankle": {
+      "width_mm": 20,
+      "length_mm": 26,
+      "thickness_mm": 3.0,
+      "bolt_circle_r_mm": 6.0,
+      "bolt_hole_r_mm": 1.1,
+      "bolts": 4,
+      "bolt_edge_mm": 2.9
+    },
+    "head_yaw": {
+      "width_mm": 26,
+      "length_mm": 35,
+      "thickness_mm": 3.0,
+      "bolt_circle_r_mm": 6.0,
+      "bolt_hole_r_mm": 1.1,
+      "bolts": 4,
+      "bolt_edge_mm": 5.9
+    },
+    "head_roll": {
+      "width_mm": 18,
+      "length_mm": 20,
+      "thickness_mm": 3.0,
+      "bolt_circle_r_mm": 6.0,
+      "bolt_hole_r_mm": 1.1,
+      "bolts": 4,
+      "bolt_edge_mm": 1.9
+    },
+    "jaw": {
+      "width_mm": 20,
+      "length_mm": 18,
+      "thickness_mm": 3.0,
+      "bolt_circle_r_mm": 6.0,
+      "bolt_hole_r_mm": 1.1,
+      "bolts": 4,
+      "bolt_edge_mm": 2.9
+    }
+  }
 }
