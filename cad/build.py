@@ -23,7 +23,7 @@ DENSITY=0.00124 # g/mm3 PLA solid-equivalent; slicer mass with infill is lower
 WALL=3.0 # shell wall; Rev C raised from 2.4 for drop strength
 ROLL_SWEEP=0.35 # rad of hip-roll clearance carved into the hip bracket
 SPUR_LIFT=1.0   # mm the heel spur sits above the sole plane; it must clear the floor while walking
-SPUR_BACK=-78   # mm; the spur must reach the floor BEFORE the sole-only tipping angle (4.75 deg),
+SPUR_BACK=-86   # mm; the spur must reach the floor BEFORE the sole-only tipping angle (4.75 deg),
                 # so the setback from the sole's rear edge has to exceed SPUR_LIFT/tan(4.75 deg) = 18 mm
 parts=[];purchased=[]
 
@@ -227,7 +227,8 @@ skull=skull.cut(box(-60,140,-60,60,150,223)) # open underneath for the neck stac
 skull=skull.cut(box(-60,50,-60,60,150,229))  # open at the rear and under the neck stack
 skull=skull.cut(box(-60,-13,-17,17,150,263)) # rear channel: the frame's back wall and roll-servo walls pass through
 skull=skull.cut(pock('head_roll')).cut(pock('jaw')) # the two head servos poke into the lower side walls
-skull=skull.cut(box(42,82,-60,60,150,233))   # mouth opening; the chin closes it
+skull=skull.cut(box(42,82,-22,22,150,233))   # mouth opening; the chin closes it. Keep the cheeks:
+                                             # a full-width cut leaves the lower front open and the chin reads as a bill
 skull=skull.union(cyl((68,0,241),'X',9,6)).cut(cone((59,0,241),'X',6.6,8.5,17)) # nose = camera ring and lens hood
 # Ears: solid tapered fins grown out of the roof, rooted 13 mm inside the shell, so they are
 # part of the print and have no thin neck to snap. The inner face is painted, not hollowed.
@@ -238,14 +239,16 @@ for x,y,z in BOSSES:
     skull=skull.union(cyl((x,y,z+6),'Z',4.5,70).intersect(skull_loft(0.6))).cut(cyl((x,y,z+5),'Z',1.7,74))
 # Eyes: flat button discs grown out of the shell, rooted 8 mm into the wall so they are part of
 # the print, not parts. The vertical rim gives shading and paint a crisp edge.
-EYE=dict(x=34,z=257,face=52.0,r=11.5)
+# face must exceed the skull's local half width (about 53.7 mm here) or the button is buried
+# in the shell and the painted iris comes out as a crescent instead of a disc.
+EYE=dict(x=34,z=257,face=56.0,r=11.5)
 for g in (1,-1):skull=skull.union(cq.Workplane('XZ',origin=(EYE['x'],g*(EYE['face']-8),EYE['z'])).circle(EYE['r']).extrude(-g*8).edges('%CIRCLE').edges('>Y' if g>0 else '<Y').fillet(1.5))
 import appearance;appearance.EYE=EYE;appearance.EAR=EAR;appearance.MUZZLE=MUZZLE
 add('skull',skull,SHELL,'head','Z','Head: one-piece round cat cranium with a short muzzle, solid ears and a nose lens hood. Three M3 down into the head frame; eyes, ear insides and nose are painted, not parts.',group='shell')
 
-CHIN=(60,0,228.5);CHIN_R=(19,26,8.5)
+CHIN=(58,0,228.5);CHIN_R=(17,20,8.5)
 chin=horn('jaw',width=13,length=18)
-chin=chin.union(ell(CHIN,CHIN_R).cut(ell(CHIN,tuple(v-WALL for v in CHIN_R))).cut(box(-60,160,-60,60,231.2,320))) # 0.8 mm under the nose ring
+chin=chin.union(ell(CHIN,CHIN_R).cut(ell(CHIN,tuple(v-WALL for v in CHIN_R))).cut(box(-60,160,-60,60,231.2,320))) # must clear the camera board, whose underside is z 230
 chin=chin.union(box(30,52,11.5,14.5,226,236))
 add('jaw_chin',chin,SHELL,'jaw','-Z','Lower jaw: rounded chin cup on a single arm bolted to the jaw servo horn.',group='shell')
 

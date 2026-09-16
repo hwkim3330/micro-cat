@@ -3,17 +3,17 @@
  "pose": "policy HOME",
  "method": "quasi-static rocking: rotate, drop to the floor, recompute contacts, fall when every contact is behind the centre of mass",
  "model_sha256": {
-  "models/micro_cat_14.xml": "4e2ce444f28e8983a5a1fe10235c65091d1f5fbfafa7956b5e23556c85e6a295",
+  "models/micro_cat_14.xml": "25848d57058693cc43af1dcfd29301cac8a55812b2b8c4fc84a22913770eba77",
   "/Users/parksik/micro-trex/micro-x/models/micro_x_14.xml": "8c065bce2c9a28ecedb1bb76c9a181fa88891852aeec8a0ebe913f394316eb76"
  },
  "results": [
   {
    "model": "models/micro_cat_14.xml",
-   "mass_g": 858.2,
-   "com_height_above_sole_mm": 136.8,
-   "tip_fwd_deg": 18.95,
-   "tip_aft_deg": 14.55,
-   "tip_lat_deg": 25.05
+   "mass_g": 864.0,
+   "com_height_above_sole_mm": 135.6,
+   "tip_fwd_deg": 19.25,
+   "tip_aft_deg": 17.7,
+   "tip_lat_deg": 25.25
   },
   {
    "model": "/Users/parksik/micro-trex/micro-x/models/micro_x_14.xml",

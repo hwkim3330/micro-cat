@@ -39,7 +39,7 @@ try {
       camera.position.set(centre[0]+dir[0]/len*fit,centre[1]+dir[1]/len*fit,centre[2]+dir[2]/len*fit);
       controls.target.set(...centre);camera.near=fit/50;camera.far=fit*8;controls.update();
       if(labels){const label=document.createElement('div');label.className='portrait-label';label.style.cssText='position:fixed;top:65px;left:75px;color:#173d30;font-family:Arial,sans-serif';
-        label.innerHTML='<div style="font-size:58px;font-weight:800;letter-spacing:3px">MICRO <span style="color:#d87832">X</span></div><div style="font-size:20px;letter-spacing:5px;margin-top:14px">YOUR LITTLE WALKING BUDDY · REV C</div>';
+        label.innerHTML='<div style="font-size:58px;font-weight:800;letter-spacing:3px">MICRO <span style="color:#d87832">CAT</span></div><div style="font-size:20px;letter-spacing:5px;margin-top:14px">YOUR LITTLE WALKING BUDDY · REV 1</div>';
         const note=document.createElement('div');note.className='portrait-label';note.style.cssText='position:fixed;bottom:45px;left:75px;color:#476454;font:18px Arial,sans-serif';note.textContent='Original commercial design · actuated 15-servo CAD · measured joint travel · digital validation stage';
         document.body.append(label,note);}
       renderer.setSize(innerWidth,innerHeight);camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.render(scene,camera);

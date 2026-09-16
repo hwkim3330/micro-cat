@@ -141,8 +141,8 @@
     0,
     0
    ],
-   "speed_m_s": 0.074,
-   "yaw_rate_rad_s": 0.0441,
+   "speed_m_s": 0.0645,
+   "yaw_rate_rad_s": 0.0812,
    "fell_s": null
   },
   {
@@ -152,8 +152,8 @@
     0,
     0
    ],
-   "speed_m_s": 0.1576,
-   "yaw_rate_rad_s": -0.0183,
+   "speed_m_s": 0.1475,
+   "yaw_rate_rad_s": 0.0126,
    "fell_s": null
   },
   {
@@ -163,8 +163,8 @@
     0,
     0
    ],
-   "speed_m_s": 0.1256,
-   "yaw_rate_rad_s": -0.1836,
+   "speed_m_s": 0.1648,
+   "yaw_rate_rad_s": -0.136,
    "fell_s": null
   },
   {
@@ -186,7 +186,7 @@
     1.0
    ],
    "speed_m_s": 0.0005,
-   "yaw_rate_rad_s": 0.0135,
+   "yaw_rate_rad_s": 0.013,
    "fell_s": null
   },
   {
@@ -196,8 +196,8 @@
     0,
     1.5
    ],
-   "speed_m_s": 0.0002,
-   "yaw_rate_rad_s": 0.0966,
+   "speed_m_s": 0.0005,
+   "yaw_rate_rad_s": 0.1035,
    "fell_s": null
   }
  ],
@@ -209,8 +209,8 @@
   },
   {
    "model": "micro_cat",
-   "best_forward_tracking": 0.263,
-   "best_yaw_tracking": 0.064
+   "best_forward_tracking": 0.246,
+   "best_yaw_tracking": 0.069
   }
  ],
  "conclusion": "Velocity tracking in this harness is only usable as a comparison between models if the reference robot tracks its own commands. Read best_tracking_ratio before citing any speed or yaw number."

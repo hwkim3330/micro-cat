@@ -54,10 +54,12 @@ class ContractTests(unittest.TestCase):
         # If this ever passes 0.9 the instrument became usable and the docs must be revisited.
         self.assertLess(ref[0]['best_yaw_tracking'],0.9)
         self.assertIn('conclusion',h)
-    def test_heel_spur_only_counts_when_it_reaches_the_floor(self):
+    def test_heel_spur_helps_and_is_not_sitting_on_a_cliff(self):
         s=json.loads((R/'artifacts/heel_spur_sweep.json').read_text())['results']
-        by={r['spur_lift']:r for r in s}
-        self.assertAlmostEqual(by['no spur']['tip_aft_deg'],by['1.5 mm']['tip_aft_deg'],places=2,
-                               msg='a spur that never touches must not change the tipping limit')
-        self.assertGreater(by['1.0 mm']['tip_aft_deg'],by['no spur']['tip_aft_deg']*2)
+        by={r['spur_lift']:r for r in s};shipped=by['1.0 mm']
+        self.assertGreater(shipped['tip_aft_deg'],by['no spur']['tip_aft_deg']*2)
+        # Every sampled lift must still engage. When one stops engaging, its tipping angle
+        # falls back to the no-spur value and the shipped lift is one step from doing the same.
+        for lift in ['0.5 mm','1.0 mm','1.5 mm']:
+            self.assertGreater(by[lift]['margin_deg'],2.0,lift+' barely engages or does not engage')
 if __name__=='__main__':unittest.main()

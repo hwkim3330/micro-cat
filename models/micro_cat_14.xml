@@ -25,10 +25,10 @@
               <inertial pos="5.14393994e-10 0.00678062199 -0.0313825658" mass="0.0265539" fullinertia="6.79750128e-06 5.70405058e-06 3.64952268e-06 -5.80164718e-14 1.79678202e-14 7.21783465e-07" />
               <body name="x_left_foot" pos="0 0.026 -0.042">
                 <joint name="left_ankle" axis="0 1 0" range="-0.55 0.55" />
-                <inertial pos="-0.00548345848 -0.0133554353 -0.017128772" mass="0.0352694" fullinertia="7.41851075e-06 2.06786895e-05 2.60499493e-05 -2.2135707e-07 -4.30733241e-07 -5.85078602e-07" />
+                <inertial pos="-0.00948995321 -0.0134598753 -0.0172767069" mass="0.0388109" fullinertia="7.80488138e-06 2.69509252e-05 3.26265638e-05 -3.83091849e-07 -6.59823797e-07 -5.91050459e-07" />
                 <geom name="left_foot_collision" type="box" pos="0.0068 -0.0145 -0.01975" size="0.029 0.023 0.00525" mass="0" rgba=".8 .3 .1 .25" group="3" />
                 <site name="left_foot" pos="0.0068 -0.0145 -0.025" size=".003" />
-                <geom name="left_foot_spur_collision" type="box" pos="-0.0343467018 -0.0145 -0.022" size="0.0118532982 0.017 0.002" mass="0" rgba=".8 .3 .1 .25" group="3" />
+                <geom name="left_foot_spur_collision" type="box" pos="-0.0383467018 -0.0145 -0.022" size="0.0158532982 0.017 0.002" mass="0" rgba=".8 .3 .1 .25" group="3" />
               </body>
               <geom name="left_lower_leg_collision" type="box" pos="-1.90734863e-10 0.00930000019 -0.01925" size="0.0134000006 0.0161999998 0.03225" mass="0" rgba=".8 .3 .1 .25" group="3" contype="2" conaffinity="2" />
             </body>
@@ -47,10 +47,10 @@
             <inertial pos="-0.000625759486 -0.00902259622 0.0168811925" mass="0.0336252" fullinertia="7.0002905e-06 5.37172592e-06 6.44916832e-06 1.89847264e-07 -5.01033699e-08 1.23984019e-08" />
             <body name="x_head" pos="-0.0179 0 0.0145">
               <joint name="head_roll" axis="-1 0 0" range="-0.15 0.15" />
-              <inertial pos="0.00930717857 0.00436007623 0.0214419091" mass="0.15008" fullinertia="0.000176433566 0.000143279232 0.00021534493 -3.65609683e-07 -6.92685002e-07 9.17735626e-06" />
+              <inertial pos="0.00954866525 0.00433529816 0.0212697377" mass="0.150637" fullinertia="0.000179678823 0.000145486387 0.000219179084 -2.30493437e-07 2.67164376e-07 9.06248122e-06" />
               <body name="x_jaw" pos="0.0179 0.0145 0.0064">
                 <joint name="jaw" axis="0 1 0" range="0.0 0.1" stiffness=".05" />
-                <inertial pos="0.0296620722 -0.0123537659 -0.0147700051" mass="0.0084949" fullinertia="1.74723192e-06 1.91893592e-06 3.15965474e-06 3.99497461e-07 3.86135195e-07 -1.64591789e-07" />
+                <inertial pos="0.026856889 -0.0117734265 -0.0141354337" mass="0.00661296" fullinertia="9.91132324e-07 1.43041613e-06 1.9702383e-06 3.49482211e-07 3.3934551e-07 -1.52940293e-07" />
               </body>
               <geom name="head_shell_collision" type="ellipsoid" pos="0.0019 0 0.0114" size=".062 .055 .033" mass="0" rgba=".8 .3 .1 .25" group="3" contype="1" conaffinity="1" />
             </body>
@@ -71,10 +71,10 @@
               <inertial pos="5.14393994e-10 -0.00678062199 -0.0313825658" mass="0.0265539" fullinertia="6.79750128e-06 5.70405058e-06 3.64952268e-06 5.80164718e-14 1.79678202e-14 -7.21783465e-07" />
               <body name="x_right_foot" pos="0 -0.026 -0.042">
                 <joint name="right_ankle" axis="0 -1 0" range="-0.55 0.55" />
-                <inertial pos="-0.00548345848 0.0133554353 -0.017128772" mass="0.0352694" fullinertia="7.41851075e-06 2.06786895e-05 2.60499493e-05 2.2135707e-07 -4.30733241e-07 5.85078602e-07" />
+                <inertial pos="-0.00948995321 0.0134598753 -0.0172767069" mass="0.0388109" fullinertia="7.80488138e-06 2.69509252e-05 3.26265638e-05 3.83091849e-07 -6.59823797e-07 5.91050459e-07" />
                 <geom name="right_foot_collision" type="box" pos="0.0068 0.0145 -0.01975" size="0.029 0.023 0.00525" mass="0" rgba=".8 .3 .1 .25" group="3" />
                 <site name="right_foot" pos="0.0068 0.0145 -0.025" size=".003" />
-                <geom name="right_foot_spur_collision" type="box" pos="-0.0343467018 0.0145 -0.022" size="0.0118532982 0.017 0.002" mass="0" rgba=".8 .3 .1 .25" group="3" />
+                <geom name="right_foot_spur_collision" type="box" pos="-0.0383467018 0.0145 -0.022" size="0.0158532982 0.017 0.002" mass="0" rgba=".8 .3 .1 .25" group="3" />
               </body>
               <geom name="right_lower_leg_collision" type="box" pos="-1.90734863e-10 -0.00930000019 -0.01925" size="0.0134000006 0.0161999998 0.03225" mass="0" rgba=".8 .3 .1 .25" group="3" contype="2" conaffinity="2" />
             </body>

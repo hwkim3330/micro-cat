@@ -12,14 +12,18 @@ def paint(mesh,name,color):
   face=np.abs(y)>e['face']-1.6                            # the button face and its rounded rim
   rad=np.hypot(x-e['x'],z-e['z'])
   colors[face&(rad<e['r']+0.05)]=IRIS
-  colors[face&(np.hypot(x-e['x']-4.5,z-e['z']-4.5)<4.0)]=GLINT
-  if EAR:                                                 # inner ear: the inboard half above the roof
-   zr=EAR[0][0]+4
+  # No painted glint. The button's flat face is tessellated from its rim only, so a mask that
+  # catches part of that rim interpolates its colour across the whole disc: the eye came out
+  # as a cream blob with a dark ring. A solid iris is what the surface can actually carry.
+  if EAR:
+   # Inner ear only: the inboard face of the fin itself. The mask has to be gated on x and y
+   # against the ear centreline as well as z, or it spills onto the skull roof between the ears.
+   zs=[s[0] for s in EAR];xc=np.interp(z,zs,[s[1] for s in EAR])
+   a=np.interp(z,zs,[s[3] for s in EAR]);b=np.interp(z,zs,[s[4] for s in EAR])
    for g in (1,-1):
-    yc=np.interp(z,[s[0] for s in EAR],[g*s[2] for s in EAR])
-    colors[(z>zr)&(g*y>0)&(g*(y-yc)<1.0)]=PINK
-  nose=(x>MUZZLE[0]+6)&(np.hypot(y,z-MUZZLE[2]-1)<11.5)   # nose pad around the lens hood
-  colors[nose]=DARKPINK
+    yc=np.interp(z,zs,[g*s[2] for s in EAR])
+    colors[(z>zs[0]+12)&(np.abs(x-xc)<a*.9)&(np.abs(y-yc)<b*1.6)&(g*(y-yc)<.6)]=PINK
+  colors[(x>MUZZLE[0]+4)&(np.hypot(y,z-MUZZLE[2]-1)<10.5)]=DARKPINK  # nose pad on the lens hood only
  if name=='torso_shell':
   x,y,z=mesh.vertices.T
   # Softer belly tone below the equator, painted, not a separate part.

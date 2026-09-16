@@ -57,9 +57,13 @@ def block_harness():
     rows.append('기준 로봇 자신이 자기 명령을 못 따르므로, **이 하네스의 절대 속도·회전 숫자는 설계 근거로 쓸 수 없습니다.** 같은 하네스 안에서의 모델 간 상대 비교만 의미가 있습니다.')
     return rows
 def block_spur():
-    rows=['| 뒤꿈치 돌기 높이 | 뒤로 기울기 | 앞으로 |','|---|---|---|']
+    rows=['| 뒤꿈치 돌기 높이 | 맞물림 각도 | 뒤로 기울기 | 여유 |','|---|---|---|---|']
     for r in spur['results']:
-        rows.append(f"| {r['spur_lift']} | {r['tip_aft_deg']}° | {r['tip_fwd_deg']}° |")
+        eng='—' if r.get('engagement_deg') is None else f"{r['engagement_deg']}°"
+        mar='—' if r.get('margin_deg') is None else f"{r['margin_deg']:+.1f}°"
+        rows.append(f"| {r['spur_lift']} | {eng} | {r['tip_aft_deg']}° | {mar} |")
+    rows.append('')
+    rows.append('맞물림 각도 = 돌기가 바닥에 닿기 시작하는 뒤쪽 기울기. 여유 = 닿은 뒤로도 더 기울 수 있는 각도이며, **음수면 닿기 전에 넘어져서 돌기가 아무 일도 하지 않습니다.**')
     return rows
 BLOCKS={'travel':block_travel,'tip':block_tip,'summary':block_summary,'harness':block_harness,'spur':block_spur}
 for doc in ['README.md','docs/DESIGN.md']:
