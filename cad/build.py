@@ -8,7 +8,7 @@ sandwiches - so every part is a thin prismatic shell that prints flat without su
 NOT a physically validated or production-released robot.
 """
 from pathlib import Path
-import json, math, sys
+import json, math, os, sys
 import cadquery as cq
 import numpy as np
 import trimesh
@@ -150,10 +150,17 @@ for g in (1,-1):
 boxes=boxes.cut(box(10.2,60,-40,40,100,200)) # stay behind the neck tube and its pitch sweep
 chassis=cq.Workplane('XY',origin=(-6,0,118)).ellipse(40,31).extrude(3).union(boxes)
 for g in (1,-1):chassis=chassis.cut(box(-18.9,15.9,g*6.9 if g>0 else -28.1,g*28.1 if g>0 else -6.9,116,122)) # servos drop through the floor
-# Flat electronics deck above the hip servo boxes, clear of the neck plate.
-chassis=chassis.union(box(-27,5.5,-26.5,26.5,147,149.5).cut(box(-24,2.5,-23.5,23.5,146,150.5))) # electronics deck
-for x in [-24,2.5]:
-    for y in [-23.5,23.5]:chassis=chassis.cut(cyl((x,y,146),'Z',1.15,6))
+# Flat electronics deck above the hip servo boxes, clear of the neck plate. Sized from the
+# selected build variant: the declared board and the drawn bay used to be set independently,
+# and the Radxa Zero 3W the documents commit to is 17 x 5 mm larger than the bay that was here.
+_CV=json.loads((R/'engineering/compute_variants.json').read_text())
+COMPUTE=os.environ.get('MICRO_COMPUTE',_CV['default'])
+_BAY=_CV['variants'][COMPUTE];_L,_W=_BAY['bay_mm'];_CX,_CY=_BAY['bay_centre_xy_mm']
+DECK=dict(x0=_CX-_L/2,x1=_CX+_L/2,y0=_CY-_W/2,y1=_CY+_W/2,z0=147,z1=149.5)
+chassis=chassis.union(box(DECK['x0']-3,DECK['x1']+3,DECK['y0']-3,DECK['y1']+3,DECK['z0'],DECK['z1'])
+                      .cut(box(DECK['x0'],DECK['x1'],DECK['y0'],DECK['y1'],146,150.5))) # electronics deck
+for x in [DECK['x0']+3,DECK['x1']-3]:
+    for y in [DECK['y0']+3,DECK['y1']-3]:chassis=chassis.cut(cyl((x,y,146),'Z',1.15,6))
 neck_plate=box(6,39,14.5,17.5,145.3,162.0)
 # The lowest horn bolt sits 1.1 mm above the plate's bottom, so its access bore needs
 # more plate under it - but dropping the whole bottom edge to 143 put the plate inside
@@ -169,7 +176,9 @@ chassis=chassis.cut(box(-50,-22.5,-20,20,117,121.5)) # battery corridor; kept 3.
 chassis=chassis.union(tray).cut(cyl((-55,25,128),'Y',1.3,-50))
 add('chassis',chassis,GRAPHITE,'trunk','Z','Chassis: floor with two hip-yaw servo boxes, neck horn plate, battery tray and compute board wall. Print floor down; the servo boxes bridge 21 mm.')
 buy('battery_pack',rbox(-89,-24,-18.5,18.5,120,139,2),DARK,'trunk',95,'Removable 2S 18650 pack, 65 x 37 x 19 mm class, 7.4 V ~3000 mAh; slides out with the tail cover','battery')
-buy('compute_board',box(-23,4,-25,25,149.6,151.2),[.1,.35,.25,1],'trunk',30,'Single-board computer up to 50 x 27 mm on the trunk deck above the hip servos; a larger module needs the reserved head bay','electronics')
+buy('compute_board',box(DECK['x0'],DECK['x1'],DECK['y0'],DECK['y1'],149.6,151.2),[.1,.35,.25,1],'trunk',30,
+    f"Single-board computer, {COMPUTE} bay: {_L} x {_W} mm. Boards: "+', '.join(b['name'] for b in _BAY['boards'])+
+    '. Connectors, camera FFC, wiring and cooling are not in this envelope','electronics')
 
 # Dome over a straight elliptical tube: the tube keeps full width down at the hip servos,
 # which an ellipsoid cannot, and it prints as a clean vertical wall.

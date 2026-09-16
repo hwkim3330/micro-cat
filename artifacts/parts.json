@@ -249,8 +249,8 @@
         61.98,
         46.5
       ],
-      "volume_mm3": 35642.6,
-      "mass_g": 44.2,
+      "volume_mm3": 35653.3,
+      "mass_g": 44.21,
       "step": "models/step/chassis.step",
       "stl": "models/print/chassis.stl"
     },
@@ -794,11 +794,11 @@
       "body": "trunk",
       "kind": "electronics",
       "mass_g": 30,
-      "note": "Single-board computer up to 50 x 27 mm on the trunk deck above the hip servos; a larger module needs the reserved head bay",
+      "note": "Single-board computer, compact bay: 26.5 x 47 mm. Boards: board to be selected. Connectors, camera FFC, wiring and cooling are not in this envelope",
       "printed": false,
       "dimensions_mm": [
-        27.0,
-        50.0,
+        26.5,
+        47.0,
         1.6
       ],
       "stl": "models/purchased/compute_board.stl"
@@ -1062,7 +1062,7 @@
       ]
     }
   ],
-  "printed_mass_g": 474.6,
+  "printed_mass_g": 474.7,
   "purchased_mass_g": 399.0,
   "horn_plates": {
     "left_hip_yaw": {

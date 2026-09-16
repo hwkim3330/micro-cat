@@ -1,0 +1,79 @@
+{
+  "scope": "Build variants of the trunk electronics bay. cad/build.py reads MICRO_COMPUTE (default 'zero') and sizes the deck and the board envelope from the entry below. bay_mm is [X extent, Y extent] in the assembly frame, so a board lying with its long side across the robot is [short, long]. tools/electronics_fit.py checks the built bay against the declared outline.",
+  "default": "compact",
+  "variants": {
+    "zero": {
+      "bay_mm": [
+        32,
+        67
+      ],
+      "bay_centre_xy_mm": [
+        -8,
+        0
+      ],
+      "boards": [
+        {
+          "name": "Radxa Zero 3W 4GB",
+          "outline_mm": [
+            65,
+            30
+          ],
+          "source": "https://docs.radxa.com/en/zero/zero3",
+          "note": "the board the official Microduck install targets; chosen by the owner as the first integrated candidate"
+        },
+        {
+          "name": "Raspberry Pi Zero 2 W",
+          "outline_mm": [
+            65,
+            30
+          ],
+          "source": "https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/",
+          "note": "same outline, so the same bay takes it; different SoC and camera path"
+        }
+      ],
+      "builds_clean": false,
+      "blocked_by": [
+        "laid along X the 67 mm bay runs into the neck tube neck_link, which occupies x 13.6-38.4 from z 140.5 up",
+        "laid across Y it needs y +/-33.5 plus a 3 mm frame, and the trunk interior at deck height is only +/-29.7 there",
+        "dropped under the neck tube to z 136-138.5 it runs into the hip yaw servo, which reaches z 144.5 at x 0-14, y 14-21"
+      ],
+      "would_need": "a wider trunk shell, the neck column moved, or the board carried in the head instead"
+    },
+    "compact": {
+      "bay_mm": [
+        26.5,
+        47
+      ],
+      "bay_centre_xy_mm": [
+        -10.75,
+        0
+      ],
+      "boards": [
+        {
+          "name": "board to be selected",
+          "outline_mm": [
+            26.5,
+            47
+          ],
+          "source": null,
+          "note": "the bay that builds clean. tools/bay_probe.py measures the largest free rectangle at the deck plane as 34 x 49 mm for the board itself; the 3 mm deck frame has to come out of that, which is why the opening is 26.5 x 47. No mainstream Linux SBC is this short: Radxa Zero 3W and Pi Zero 2 W are 65 x 30, CM4 and CM5 are 55 x 40 before a carrier."
+        }
+      ],
+      "builds_clean": true
+    }
+  },
+  "not_offered": [
+    {
+      "name": "Raspberry Pi Compute Module 5 4GB",
+      "outline_mm": [
+        55,
+        40
+      ],
+      "source": "https://www.raspberrypi.com/products/compute-module-5/",
+      "why": "40 mm across collides with the neck horn plate at y 14.5-17.5. It needs the plate moved or a wider trunk, not just a bigger deck. Module outline excludes the carrier, which is larger again."
+    }
+  ],
+  "excluded_from_every_number": "connectors, camera FFC, wiring loom, standoffs and cooling",
+  "physical_fit_tested": false,
+  "finding": "The documents committed to a Radxa Zero 3W before anything checked it against the trunk. tools/bay_probe.py then measured the trunk: the largest free rectangle at the deck plane is 34 x 49 mm, so no standard SBC fits. Carrying a Linux board is a body decision - a wider trunk, the board in the head, or a module on a custom carrier - not a parts decision."
+}
