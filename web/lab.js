@@ -38,7 +38,11 @@ async function json(url){const r=await fetch(url,{cache:'no-store'});if(!r.ok)th
 async function cards(){
   try{const r=await json('../artifacts/compat_evaluation.json');const falls=r.results.filter(x=>x.first_fall_s!==null).length,gate=r.results.filter(x=>x.tracking_gate_passed).length;$('#card-official').textContent=`CAD 기반 모델에서 ${r.results.length}회 시험: 넘어짐 ${falls}회, 속도·방향 기준 통과 ${gate}회. 서 있기는 되지만 전진·회전 명령 추종은 아직 미달입니다.`}catch{$('#card-official').textContent='기록을 불러오지 못했습니다.'}
   try{const r=await json('../artifacts/compat_training.json');$('#card-training').textContent=`같은 액터로 PPO ${r.updates}회 × ${r.steps_per_update}스텝 실행, 변환 오차 ${r.initial_actor_max_error.toExponential(1)}, ONNX 재내보내기 완료. 원본 학습 설정과의 동일성은 미검증입니다.`}catch{$('#card-training').textContent='기록을 불러오지 못했습니다.'}
-  try{const r=await json('../artifacts/trained_500_evaluation.json');const gate=r.results.filter(x=>x.tracking_gate_passed).length;$('#card-500').textContent=`256개 환경·500회 학습 정책의 ${r.results.length}회 시험 중 ${gate}회 통과. 정지만 통과했고 이동 명령은 미달이라 기본 정책으로 채택하지 않았습니다.`}catch{$('#card-500').textContent='기록을 불러오지 못했습니다.'}}
+  try{const r=await json('../artifacts/tip_study.json');const by={};for(const x of r.results)by[x.model.split('/').pop().replace('.xml','')]=x;
+    const me=by['micro_cat_14'],ref=by['robot_walk'];
+    $('#card-tip').textContent=ref?`같은 도구·같은 자세로 잰 뒤로 기울기: 원본 ${ref.tip_aft_deg}°, Micro Cat ${me.tip_aft_deg}°. 앞으로는 ${ref.tip_fwd_deg}° 대 ${me.tip_fwd_deg}°입니다. 강체·정적 계산이며 접촉 강성·마찰·동역학은 없습니다.`
+      :`뒤로 ${me.tip_aft_deg}°, 앞으로 ${me.tip_fwd_deg}°, 옆으로 ${me.tip_lat_deg}°. 강체·정적 계산입니다.`}
+  catch{$('#card-tip').textContent='기록을 불러오지 못했습니다.'}}
 cards();
 function chart(hist){const c=$('#ppo-chart').getContext('2d'),w=700,h=200;c.clearRect(0,0,w,h);if(!hist.length){c.fillStyle='#5a6a5f';c.font='14px sans-serif';c.fillText('학습을 시작하면 업데이트별 평균 보상(초록)과 넘어짐 수(주황)가 그려집니다.',16,h/2);return}
   const rewards=hist.map(p=>p.mean_reward),falls=hist.map(p=>p.falls);const rmin=Math.min(...rewards),rmax=Math.max(...rewards),fmax=Math.max(1,...falls);const x=i=>24+i/Math.max(1,hist.length-1)*(w-48);

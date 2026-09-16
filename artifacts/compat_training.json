@@ -1,0 +1,88 @@
+{
+  "model_sha256": "0f282819d4238e5b7c3046d5446266dcd329d62e02139b121fbfe45fe2901d17",
+  "scope": "Independent CPU PPO warm-start/fine-tuning smoke run. Same pretrained 61\u2192512\u2192256\u2192128\u219214 ELU actor and normalization; not full upstream training recipe parity or locomotion acceptance.",
+  "source_sha256": "e36332d383997d51401897734cd3e79cf5038406feddb18b4d57ecfb141daa6c",
+  "initial_actor_max_error": 5.960464477539062e-07,
+  "export_max_error": 3.2782554626464844e-07,
+  "actor_weights_changed": true,
+  "updates": 10,
+  "steps_per_update": 256,
+  "seed": 42,
+  "elapsed_s": 1.17,
+  "history": [
+    {
+      "update": 1,
+      "mean_reward": 1.2845,
+      "falls": 0,
+      "loss": 210.2921142578125,
+      "elapsed_s": 0.1
+    },
+    {
+      "update": 2,
+      "mean_reward": 1.2891,
+      "falls": 0,
+      "loss": 200.2089385986328,
+      "elapsed_s": 0.3
+    },
+    {
+      "update": 3,
+      "mean_reward": 1.4989,
+      "falls": 0,
+      "loss": 287.58587646484375,
+      "elapsed_s": 0.4
+    },
+    {
+      "update": 4,
+      "mean_reward": 1.4991,
+      "falls": 0,
+      "loss": 266.3623352050781,
+      "elapsed_s": 0.5
+    },
+    {
+      "update": 5,
+      "mean_reward": 1.4989,
+      "falls": 0,
+      "loss": 287.593505859375,
+      "elapsed_s": 0.6
+    },
+    {
+      "update": 6,
+      "mean_reward": 1.3807,
+      "falls": 0,
+      "loss": 246.57568359375,
+      "elapsed_s": 0.7
+    },
+    {
+      "update": 7,
+      "mean_reward": 0.7734,
+      "falls": 0,
+      "loss": 77.64595031738281,
+      "elapsed_s": 0.8
+    },
+    {
+      "update": 8,
+      "mean_reward": 0.7701,
+      "falls": 0,
+      "loss": 70.28380584716797,
+      "elapsed_s": 0.9
+    },
+    {
+      "update": 9,
+      "mean_reward": 0.7831,
+      "falls": 0,
+      "loss": 78.46422576904297,
+      "elapsed_s": 1.0
+    },
+    {
+      "update": 10,
+      "mean_reward": 0.9106,
+      "falls": 0,
+      "loss": 93.8046646118164,
+      "elapsed_s": 1.1
+    }
+  ],
+  "checkpoint_sha256": "7e946a2c53f9eebf34b542f7d40cad206140851309dbd0c06ffc17b16885dcfe",
+  "checkpoint": "micro_cat_14.onnx",
+  "physical_verified": false,
+  "upstream_training_recipe_parity": false
+}
