@@ -128,10 +128,10 @@
       ],
       "height_mm": 46.5,
       "bed_contact_mm2": 510.0,
-      "overhang_area_mm2": 5359.6,
-      "overhang_fraction": 0.1791,
+      "overhang_area_mm2": 5365.9,
+      "overhang_fraction": 0.1793,
       "fits_bed": true,
-      "mass_g": 44.2
+      "mass_g": 44.21
     },
     {
       "part": "head_frame",

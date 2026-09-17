@@ -75,5 +75,15 @@
   ],
   "excluded_from_every_number": "connectors, camera FFC, wiring loom, standoffs and cooling",
   "physical_fit_tested": false,
-  "finding": "The documents committed to a Radxa Zero 3W before anything checked it against the trunk. tools/bay_probe.py then measured the trunk: the largest free rectangle at the deck plane is 34 x 49 mm, so no standard SBC fits. Carrying a Linux board is a body decision - a wider trunk, the board in the head, or a module on a custom carrier - not a parts decision."
+  "finding": "The documents committed to a Radxa Zero 3W before anything checked it against the trunk. tools/bay_probe.py then measured the trunk: the largest free rectangle at the deck plane is 34 x 49 mm, so no standard SBC fits. Carrying a Linux board is a body decision - a wider trunk, the board in the head, or a module on a custom carrier - not a parts decision.",
+  "tried_and_reverted": {
+    "change": "trunk widened from 90 x 77 to 104 x 104 mm so the 65 x 30 Radxa Zero 3W would fit",
+    "result": "the board fitted, and the robot got worse",
+    "why": [
+      "the thigh spans y 43-75 and the widened body reached y 52, so the hip pitch sweep hit the flank; carving the real swept volume out removed most of the lower side of the body",
+      "raising the dome to fix the resulting saucer shape split the shell into two solids",
+      "the neck column runs vertically through the middle of the trunk, so a 65 mm board cannot span it and has to sit beside it, which is what forces the width"
+    ],
+    "conclusion": "a standard Linux SBC does not go in this trunk. The remaining option worth measuring is the head, which is 108 x 110 x 62 mm and mostly empty, at the cost of backward tipping margin."
+  }
 }

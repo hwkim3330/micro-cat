@@ -9,7 +9,7 @@ right_hip,1,printed,right_hip,PLA solid-equivalent volume; infill and material n
 right_upper_leg,1,printed,right_upper_leg,PLA solid-equivalent volume; infill and material not frozen,23.06,Rev 1 digital design,models/step/right_upper_leg.step
 right_lower_leg,1,printed,right_lower_leg,PLA solid-equivalent volume; infill and material not frozen,8.55,Rev 1 digital design,models/step/right_lower_leg.step
 right_foot,1,printed,right_foot,PLA solid-equivalent volume; infill and material not frozen,38.72,Rev 1 digital design,models/step/right_foot.step
-chassis,1,printed,trunk,PLA solid-equivalent volume; infill and material not frozen,44.2,Rev 1 digital design,models/step/chassis.step
+chassis,1,printed,trunk,PLA solid-equivalent volume; infill and material not frozen,44.21,Rev 1 digital design,models/step/chassis.step
 torso_shell,1,printed,trunk,PLA solid-equivalent volume; infill and material not frozen,29.07,Rev 1 digital design,models/step/torso_shell.step
 tail_cover,1,printed,trunk,PLA solid-equivalent volume; infill and material not frozen,42.56,Rev 1 digital design,models/step/tail_cover.step
 neck_link,1,printed,neck,PLA solid-equivalent volume; infill and material not frozen,16.0,Rev 1 digital design,models/step/neck_link.step
@@ -35,7 +35,7 @@ servo_head_yaw,1,actuator,head_yoke,XL330-class smart servo envelope; confirm th
 servo_head_roll,1,actuator,head,XL330-class smart servo envelope; confirm the case hole pattern before ordering,18.0,purchased envelope; supplier quote pending,models/purchased/servo_head_roll.stl
 servo_jaw,1,actuator,head,XL330-class smart servo envelope; confirm the case hole pattern before ordering,18.0,purchased envelope; supplier quote pending,models/purchased/servo_jaw.stl
 battery_pack,1,battery,trunk,"Removable 2S 18650 pack, 65 x 37 x 19 mm class, 7.4 V ~3000 mAh; slides out with the tail cover",95,purchased envelope; supplier quote pending,models/purchased/battery_pack.stl
-compute_board,1,electronics,trunk,Single-board computer up to 50 x 27 mm on the trunk deck above the hip servos; a larger module needs the reserved head bay,30,purchased envelope; supplier quote pending,models/purchased/compute_board.stl
+compute_board,1,electronics,trunk,"Single-board computer, compact bay: 26.5 x 47 mm. Boards: board to be selected. Connectors, camera FFC, wiring and cooling are not in this envelope",30,purchased envelope; supplier quote pending,models/purchased/compute_board.stl
 camera_module_3,1,camera,head,"Raspberry Pi Camera Module 3 Standard class, 25 x 24 mm board; the nose bore is a 14 mm funnel, so the usable field of view is about 60 deg, narrower than the module rating",4,purchased envelope; supplier quote pending,models/purchased/camera_module_3.stl
 
 # measured joint travel (deg),min,max,,,,,

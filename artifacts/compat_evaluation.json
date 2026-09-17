@@ -4,7 +4,7 @@
   "observation_size": 61,
   "action_size": 14,
   "control_hz": 50,
-  "model_sha256": "0f282819d4238e5b7c3046d5446266dcd329d62e02139b121fbfe45fe2901d17",
+  "model_sha256": "5f7d89943d9e37684e3c5346673889f2ef1b46030e02ff4029e13b363d80ba71",
   "weights": {
     "infer_policy.py": {
       "url": "https://raw.githubusercontent.com/pollen-robotics/microduck_rl/2b25a48b08f1f17bc38c90bb03144c81fbd9ed07/scripts/infer_policy.py",
@@ -38,7 +38,7 @@
       "seed": 0,
       "duration_s": 10.0,
       "first_fall_s": null,
-      "max_tilt_degrees": 1.05,
+      "max_tilt_degrees": 1.06,
       "final_xy_m": [
         0.0006,
         0.0002
@@ -66,7 +66,7 @@
       "seed": 1,
       "duration_s": 10.0,
       "first_fall_s": null,
-      "max_tilt_degrees": 1.04,
+      "max_tilt_degrees": 1.05,
       "final_xy_m": [
         0.0003,
         0.0005
@@ -94,7 +94,7 @@
       "seed": 2,
       "duration_s": 10.0,
       "first_fall_s": null,
-      "max_tilt_degrees": 1.0,
+      "max_tilt_degrees": 1.01,
       "final_xy_m": [
         0.0003,
         0.0005
@@ -122,7 +122,7 @@
       "seed": 0,
       "duration_s": 10.0,
       "first_fall_s": null,
-      "max_tilt_degrees": 1.1,
+      "max_tilt_degrees": 1.11,
       "final_xy_m": [
         0.0058,
         0.0006
@@ -150,7 +150,7 @@
       "seed": 1,
       "duration_s": 10.0,
       "first_fall_s": null,
-      "max_tilt_degrees": 1.07,
+      "max_tilt_degrees": 1.08,
       "final_xy_m": [
         0.0055,
         0.0009
@@ -178,7 +178,7 @@
       "seed": 2,
       "duration_s": 10.0,
       "first_fall_s": null,
-      "max_tilt_degrees": 1.03,
+      "max_tilt_degrees": 1.04,
       "final_xy_m": [
         0.0054,
         0.0008
@@ -206,21 +206,21 @@
       "seed": 0,
       "duration_s": 10.0,
       "first_fall_s": null,
-      "max_tilt_degrees": 2.63,
+      "max_tilt_degrees": 2.65,
       "final_xy_m": [
-        0.6448,
-        0.2948
+        0.6492,
+        0.2826
       ],
       "finite": true,
       "mean_body_velocity": [
-        0.08211,
-        0.00082,
-        0.08425
+        0.08203,
+        0.00058,
+        0.08706
       ],
       "tracking_mae": [
-        0.21789,
-        0.1154,
-        0.66809
+        0.21797,
+        0.11588,
+        0.6675
       ],
       "tracking_gate_passed": false
     },
@@ -234,21 +234,21 @@
       "seed": 1,
       "duration_s": 10.0,
       "first_fall_s": null,
-      "max_tilt_degrees": 2.68,
+      "max_tilt_degrees": 2.57,
       "final_xy_m": [
-        0.6385,
-        0.2829
+        0.6431,
+        0.2757
       ],
       "finite": true,
       "mean_body_velocity": [
-        0.08125,
-        0.00092,
-        0.08545
+        0.08123,
+        0.00094,
+        0.07811
       ],
       "tracking_mae": [
-        0.21875,
-        0.11566,
-        0.66932
+        0.21877,
+        0.11565,
+        0.67042
       ],
       "tracking_gate_passed": false
     },
@@ -262,21 +262,21 @@
       "seed": 2,
       "duration_s": 10.0,
       "first_fall_s": null,
-      "max_tilt_degrees": 2.56,
+      "max_tilt_degrees": 2.63,
       "final_xy_m": [
-        0.657,
-        0.2728
+        0.6458,
+        0.2909
       ],
       "finite": true,
       "mean_body_velocity": [
-        0.082,
-        0.0009,
-        0.07413
+        0.08219,
+        0.00073,
+        0.08905
       ],
       "tracking_mae": [
-        0.218,
-        0.11598,
-        0.66872
+        0.21781,
+        0.11593,
+        0.66676
       ],
       "tracking_gate_passed": false
     },
@@ -290,9 +290,9 @@
       "seed": 0,
       "duration_s": 10.0,
       "first_fall_s": null,
-      "max_tilt_degrees": 1.2,
+      "max_tilt_degrees": 1.21,
       "final_xy_m": [
-        0.0041,
+        0.004,
         0.0008
       ],
       "finite": true,
@@ -318,7 +318,7 @@
       "seed": 1,
       "duration_s": 10.0,
       "first_fall_s": null,
-      "max_tilt_degrees": 1.28,
+      "max_tilt_degrees": 1.29,
       "final_xy_m": [
         0.0038,
         0.0012
@@ -346,7 +346,7 @@
       "seed": 2,
       "duration_s": 10.0,
       "first_fall_s": null,
-      "max_tilt_degrees": 1.27,
+      "max_tilt_degrees": 1.28,
       "final_xy_m": [
         0.0037,
         0.0011
@@ -402,7 +402,7 @@
       "seed": 1,
       "duration_s": 10.0,
       "first_fall_s": null,
-      "max_tilt_degrees": 0.96,
+      "max_tilt_degrees": 0.95,
       "final_xy_m": [
         0.0019,
         -0.0001
@@ -411,12 +411,12 @@
       "mean_body_velocity": [
         3e-05,
         -0.0,
-        0.00015
+        0.00014
       ],
       "tracking_mae": [
         3e-05,
         0.0,
-        0.00015
+        0.00014
       ],
       "tracking_gate_passed": true
     },

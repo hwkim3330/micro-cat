@@ -1,14 +1,14 @@
 {
  "scope": "How big a board can the trunk actually take?  Choosing a compute board before measuring the space is how the documents ended up committed to a Radxa Zero 3W that does not fit. This goes the other way: sweep the deck plane, mark every point that is inside the trunk shell and clear of the chassis, neck column and servos, and report the largest axis-aligned rectangle that fits. Shop for a board afterwards.",
- "deck_z_mm": 135.0,
+ "deck_z_mm": 149.6,
  "grid_mm": 1.0,
  "clearance_mm": 1.5,
  "largest_bay_mm": [
-  14.0,
-  41.0
+  34.0,
+  49.0
  ],
  "centre_xy_mm": [
-  24.8,
+  -13.2,
   -0.1
  ],
  "obstacles": [

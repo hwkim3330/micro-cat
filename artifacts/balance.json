@@ -2,7 +2,7 @@
   "scope": "HOME pose, both feet flat; CAD-derived masses (PLA solid density + purchased catalogue masses); fasteners, cables and print infill not modelled.",
   "mass_g": 872.5,
   "center_of_mass_mm": [
-    -12.12,
+    -12.16,
     0.26,
     139.67
   ],
@@ -24,13 +24,13 @@
       73.0
     ]
   ],
-  "minimum_static_margin_mm": 16.12,
+  "minimum_static_margin_mm": 16.16,
   "bodies": [
     {
       "body": "trunk_base",
       "mass_g": 276.7,
       "com_mm": [
-        -36.8,
+        -36.9,
         0.1,
         133.5
       ]
@@ -171,6 +171,6 @@
       ]
     }
   ],
-  "model_sha256": "0f282819d4238e5b7c3046d5446266dcd329d62e02139b121fbfe45fe2901d17",
+  "model_sha256": "5f7d89943d9e37684e3c5346673889f2ef1b46030e02ff4029e13b363d80ba71",
   "physical_verified": false
 }

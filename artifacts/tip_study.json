@@ -3,7 +3,7 @@
  "pose": "policy HOME",
  "method": "quasi-static rocking: rotate, drop to the floor, recompute contacts, fall when every contact is behind the centre of mass",
  "model_sha256": {
-  "models/micro_cat_14.xml": "0f282819d4238e5b7c3046d5446266dcd329d62e02139b121fbfe45fe2901d17",
+  "models/micro_cat_14.xml": "5f7d89943d9e37684e3c5346673889f2ef1b46030e02ff4029e13b363d80ba71",
   "/Users/parksik/micro-trex/micro-rex/vendor/microduck/robot_walk.xml": "80fc4424ed71e430ec4919110dfdb5c714dc1c4e1138e1832a16865cf31eb8c8",
   "/Users/parksik/micro-trex/micro-x/models/micro_x_14.xml": "e68b7735f9ede610309209ac71d81a16f58724300d28687b65b7670ba060021a"
  },
@@ -18,11 +18,11 @@
     "fall_deg": 19.25,
     "margin_deg": 19.25
    },
-   "tip_aft_deg": 17.7,
+   "tip_aft_deg": 17.65,
    "tip_aft_detail": {
     "settle_deg": 0.0,
-    "fall_deg": 17.7,
-    "margin_deg": 17.7
+    "fall_deg": 17.65,
+    "margin_deg": 17.65
    },
    "tip_lat_deg": 25.25,
    "tip_lat_detail": {

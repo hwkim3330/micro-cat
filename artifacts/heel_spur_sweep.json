@@ -4,12 +4,12 @@
  "results": [
   {
    "spur_lift": "no spur",
-   "tip_aft_deg": 4.55,
+   "tip_aft_deg": 4.5,
    "tip_fwd_deg": 19.25,
    "engagement_deg": null,
    "margin_deg": null,
-   "yaw_rate_at_cmd_1_rad_s": 0.0177,
-   "speed_at_cmd_0p6_m_s": 0.185,
+   "yaw_rate_at_cmd_1_rad_s": 0.026,
+   "speed_at_cmd_0p6_m_s": 0.1822,
    "fell_turning_s": null,
    "fell_forward_s": null
   },
@@ -20,16 +20,16 @@
    "engagement_deg": 7.1,
    "margin_deg": 10.5,
    "yaw_rate_at_cmd_1_rad_s": 0.0118,
-   "speed_at_cmd_0p6_m_s": 0.1458,
+   "speed_at_cmd_0p6_m_s": 0.1448,
    "fell_turning_s": null,
    "fell_forward_s": null
   },
   {
    "spur_lift": "1.0 mm",
-   "tip_aft_deg": 17.7,
+   "tip_aft_deg": 17.65,
    "tip_fwd_deg": 19.25,
    "engagement_deg": 7.98,
-   "margin_deg": 9.72,
+   "margin_deg": 9.67,
    "yaw_rate_at_cmd_1_rad_s": 0.0129,
    "speed_at_cmd_0p6_m_s": 0.1481,
    "fell_turning_s": null,
@@ -37,10 +37,10 @@
   },
   {
    "spur_lift": "1.5 mm",
-   "tip_aft_deg": 17.75,
+   "tip_aft_deg": 17.7,
    "tip_fwd_deg": 19.25,
    "engagement_deg": 8.85,
-   "margin_deg": 8.9,
+   "margin_deg": 8.85,
    "yaw_rate_at_cmd_1_rad_s": 0.0135,
    "speed_at_cmd_0p6_m_s": 0.1499,
    "fell_turning_s": null,

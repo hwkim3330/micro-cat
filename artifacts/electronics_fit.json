@@ -6,14 +6,14 @@
   65
  ],
  "modelled_bay_mm": [
-  27.0,
-  50.0
+  26.5,
+  47.0
  ],
  "placement_margin_mm": 1.0,
  "fits": false,
  "shortfall_mm": [
-  5.0,
-  17.0
+  5.5,
+  20.0
  ],
  "connectors_and_wiring_included": false
 }

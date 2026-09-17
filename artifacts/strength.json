@@ -116,20 +116,20 @@
   },
   {
    "part": "chassis",
-   "mass_g": 44.2,
+   "mass_g": 44.21,
    "p05_wall_mm": 1.1,
-   "median_wall_mm": 3.0,
-   "fraction_below_min_wall": 0.4124,
+   "median_wall_mm": 10.86,
+   "fraction_below_min_wall": 0.2905,
    "thin_region_mm": [
     [
      -36.0,
-     -24.6,
+     -21.6,
      116.0
     ],
     [
-     3.6,
+     0.6,
      28.0,
-     146.0
+     146.6
     ]
    ]
   },
@@ -320,17 +320,17 @@
   },
   {
    "part": "chassis",
-   "fraction": 0.4124,
+   "fraction": 0.2905,
    "where": [
     [
      -36.0,
-     -24.6,
+     -21.6,
      116.0
     ],
     [
-     3.6,
+     0.6,
      28.0,
-     146.0
+     146.6
     ]
    ]
   },
